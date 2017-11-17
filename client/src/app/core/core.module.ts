@@ -1,10 +1,7 @@
 import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 @NgModule({
-  imports: [
-    AngularFireDatabaseModule
-  ]
+  imports: []
 })
 export class CoreModule {
 
