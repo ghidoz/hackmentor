@@ -10,7 +10,7 @@ export const environment = {
     authDomain: 'hackmentor-6123e.firebaseapp.com',
     databaseURL: 'https://hackmentor-6123e.firebaseio.com',
     projectId: 'hackmentor-6123e',
-    storageBucket: '',
+    storageBucket: 'hackmentor-6123e.appspot.com',
     messagingSenderId: '944604786710'
   }
 };
