@@ -1,5 +1,5 @@
-ALTER TABLE `PechUser`
+ALTER TABLE `MyUser`
 DROP COLUMN `firstName`,
 DROP COLUMN `familyName`;
 
-RENAME TABLE `PechUser` TO `User`;
+RENAME TABLE `MyUser` TO `User`;
