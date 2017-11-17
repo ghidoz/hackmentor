@@ -1,16 +1,16 @@
 'use strict';
 
-module.exports = function(PechUser) {
+module.exports = function(MyUser) {
 
-  PechUser.ROLES = {
+  MyUser.ROLES = {
     ADMIN: 'admin',
     CONTROLLER: 'controller'
   };
 
-  PechUser.observe('after save', updateRoleMappings(PechUser));
-  PechUser.observe('after delete', cleanupRoleMappings(PechUser));
+  MyUser.observe('after save', updateRoleMappings(MyUser));
+  MyUser.observe('after delete', cleanupRoleMappings(MyUser));
 
-  PechUser.rolesForUser = rolesForUser(PechUser);
+  MyUser.rolesForUser = rolesForUser(MyUser);
 
 };
 
@@ -78,54 +78,5 @@ function cleanupRoleMappings(PechUser) {
 
   }
 
-
-}
-
-function qualityReportsForUser(PechUser) {
-
-  PechUser.remoteMethod(
-    'qualityReportsForUser', {
-      accepts: [
-        { arg: 'filter', type: 'object' },
-        { arg: 'options', type: 'object', http: 'optionsFromRequest'}
-      ],
-      description: "Returns the quality reports for a given user",
-      returns: { root: true, type: 'object' },
-      http: { arg: 'get', path: '/quality-reports' }
-    }
-  );
-
-  return function(filter, options, cb) {
-
-    const userId = options && options.accessToken && options.accessToken.userId;
-
-    if(!userId) return cb(new Error('Could not determine userId'));
-
-    const QualityReport = PechUser.app.models.QualityReport;
-
-    PechUser.rolesForUser(options.accessToken.userId)
-      .then(function(roles) {
-
-        if(roles.indexOf(PechUser.ROLES.ADMIN) > -1) return filter;
-
-        if(roles.indexOf(PechUser.ROLES.CONTROLLER) > -1) {
-          filter.controllerId = userId;
-          return filter;
-        }
-
-        throw new Error('Could not find Controller or Admin role for user');
-
-      })
-      .then(function(filter){
-        return QualityReport.find(filter);
-      })
-      .then(function(results){
-        return cb(null, results);
-      })
-      .catch(function(err){
-        return cb(err);
-      });
-
-  };
 
 }
