@@ -59,7 +59,7 @@ CREATE TABLE `MentorProfile` (
   `id` INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `hoursPerWeek` INT(2) NOT NULL,
   `pricePerHour` INT(3) NOT NULL,
-  `levelOfExperience` VARCHAR(64) NOT NULL,
+  `levelOfExperience` INT(1) NOT NULL,
   `headline` VARCHAR(256) NOT NULL,
   `description` VARCHAR(2048) NULL,
   `createdAt` DATETIME NOT NULL DEFAULT NOW(),
