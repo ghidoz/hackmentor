@@ -30,7 +30,7 @@ function authenticate(MyUser) {
 
     const accessToken = await user.createAccessToken();
 
-    return AccessToken.find({ where: { id: accessToken.id }, include: 'user'})
+    return AccessToken.findOne({ where: { id: accessToken.id }, include: 'user'})
   }
 
 }
