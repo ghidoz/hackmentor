@@ -822,6 +822,34 @@ export class MyUserApi extends BaseLoopBackApi {
   }
 
   /**
+   * Registers or authenticates a user using their facebook token
+   *
+   * @param {object} data Request data.
+   *
+   *  - `facebookToken` – `{string}` - 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `MyUser` object.)
+   * </em>
+   */
+  public fbAuthentication(facebookToken: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/MyUsers/authenticate";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof facebookToken !== 'undefined' && facebookToken !== null) _urlParams.facebookToken = facebookToken;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * Creates a new instance in accessTokens of this model.
    *
    * @param {any} id MyUser id

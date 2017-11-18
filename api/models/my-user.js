@@ -4,7 +4,7 @@ const graph = require('fbgraph');
 
 module.exports = function(MyUser) {
 
-  MyUser.authenticate = authenticate(MyUser);
+  MyUser.fbAuthentication = authenticate(MyUser);
 
 };
 

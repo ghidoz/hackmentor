@@ -55,7 +55,7 @@
     }
   ],
   "methods": {
-    "authenticate": {
+    "fbAuthentication": {
       "accepts": [
         { "arg": "facebookToken", "type": "string", "required": true },
         { "arg": "options", "type": "object", "http": "optionsFromRequest" }
