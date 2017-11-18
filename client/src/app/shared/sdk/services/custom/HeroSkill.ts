@@ -34,7 +34,7 @@ export class HeroSkillApi extends BaseLoopBackApi {
   }
 
   /**
-   * Fetches belongsTo relation hero.
+   * Fetches belongsTo relation heroCategory.
    *
    * @param {any} id HeroSkill id
    *
@@ -49,10 +49,10 @@ export class HeroSkillApi extends BaseLoopBackApi {
    * This usually means the response is a `HeroSkill` object.)
    * </em>
    */
-  public getHero(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
+  public getHeroCategory(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/HeroSkills/:id/hero";
+    "/HeroSkills/:id/heroCategory";
     let _routeParams: any = {
       id: id
     };

@@ -1,14 +1,22 @@
 /* tslint:disable */
+import {
+  HeroSkill,
+  HeroCategory
+} from '../index';
 
 declare var Object: any;
 export interface SkillInterface {
   "name": string;
   "id"?: number;
+  heroSkills?: HeroSkill[];
+  heroCategories?: HeroCategory[];
 }
 
 export class Skill implements SkillInterface {
   "name": string;
   "id": number;
+  heroSkills: HeroSkill[];
+  heroCategories: HeroCategory[];
   constructor(data?: SkillInterface) {
     Object.assign(this, data);
   }
@@ -52,6 +60,24 @@ export class Skill implements SkillInterface {
         },
       },
       relations: {
+        heroSkills: {
+          name: 'heroSkills',
+          type: 'HeroSkill[]',
+          model: 'HeroSkill',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'skillId'
+        },
+        heroCategories: {
+          name: 'heroCategories',
+          type: 'HeroCategory[]',
+          model: 'HeroCategory',
+          relationType: 'hasMany',
+          modelThrough: 'HeroSkill',
+          keyThrough: 'heroCategoryId',
+          keyFrom: 'id',
+          keyTo: 'skillId'
+        },
       }
     }
   }

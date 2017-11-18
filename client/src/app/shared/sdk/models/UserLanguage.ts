@@ -6,7 +6,6 @@ import {
 
 declare var Object: any;
 export interface UserLanguageInterface {
-  "id"?: number;
   "userId"?: number;
   "languageId"?: number;
   user?: MyUser;
@@ -14,7 +13,6 @@ export interface UserLanguageInterface {
 }
 
 export class UserLanguage implements UserLanguageInterface {
-  "id": number;
   "userId": number;
   "languageId": number;
   user: MyUser;
@@ -50,12 +48,8 @@ export class UserLanguage implements UserLanguageInterface {
       name: 'UserLanguage',
       plural: 'UserLanguages',
       path: 'UserLanguages',
-      idName: 'id',
+      idName: 'userId',
       properties: {
-        "id": {
-          name: 'id',
-          type: 'number'
-        },
         "userId": {
           name: 'userId',
           type: 'number'
