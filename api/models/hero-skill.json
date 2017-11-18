@@ -1,6 +1,5 @@
 {
   "name": "HeroSkill",
-  "idInjection": true,
   "mixins": {
     "EnhancedContext": {}
   },
@@ -8,15 +7,20 @@
     "validateUpsert": true
   },
   "properties": {
+    "heroCategoryId": {
+      "type": "number", "id": 1
+    },
+    "skillId": {
+      "type": "number", "id": 2
+    }
   },
   "scope": {
   },
   "validations": [],
   "relations": {
-    "hero": {
+    "heroCategory": {
       "type": "belongsTo",
-      "model": "HeroCategory",
-      "foreignKey": "heroId"
+      "model": "HeroCategory"
     },
     "skill": {
       "type": "belongsTo",

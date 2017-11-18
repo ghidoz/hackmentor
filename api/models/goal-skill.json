@@ -1,6 +1,5 @@
 {
   "name": "GoalSkill",
-  "idInjection": true,
   "mixins": {
     "EnhancedContext": {}
   },
@@ -8,6 +7,8 @@
     "validateUpsert": true
   },
   "properties": {
+    "goalId": { "type": "number", "id": 1},
+    "skillId": { "type": "number", "id": 2},
     "level": {
       "type": "string",
       "required": true
