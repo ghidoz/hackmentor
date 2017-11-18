@@ -8,6 +8,7 @@ import { SDKBrowserModule } from './shared/sdk/index';
 import { FacebookModule } from 'ngx-facebook';
 import { MentorsModule } from './mentors/mentors.module';
 import { HttpClientModule } from '@angular/common/http';
+import { LayoutModule } from './layout/layout.module';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
     MentorsModule,
     SDKBrowserModule.forRoot(),
     FacebookModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    LayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

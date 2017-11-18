@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MenuComponent } from './menu/menu.component';
 import { RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material';
+import { TopBarComponent } from './top-bar/top-bar.component';
 
 @NgModule({
   imports: [
@@ -11,10 +12,12 @@ import { MatIconModule } from '@angular/material';
     MatIconModule
   ],
   exports: [
-    MenuComponent
+    MenuComponent,
+    TopBarComponent
   ],
   declarations: [
-    MenuComponent
+    MenuComponent,
+    TopBarComponent
   ]
 })
 export class LayoutModule { }
