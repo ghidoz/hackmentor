@@ -60,6 +60,7 @@ import { MentorProfileApi } from './services/custom/MentorProfile';
 import { MentorSkillApi } from './services/custom/MentorSkill';
 import { SkillApi } from './services/custom/Skill';
 import { UserLanguageApi } from './services/custom/UserLanguage';
+import { ContactRequestApi } from './services/custom/ContactRequest';
 /**
 * @module SDKBrowserModule
 * @description
@@ -102,6 +103,7 @@ export class SDKBrowserModule {
         MentorSkillApi,
         SkillApi,
         UserLanguageApi,
+        ContactRequestApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser },
         { provide: SocketDriver, useClass: SocketBrowser }

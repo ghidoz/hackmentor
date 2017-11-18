@@ -1,19 +1,14 @@
 /* tslint:disable */
-import {
-  Role
-} from '../index';
 
 declare var Object: any;
 export interface LanguageInterface {
   "name": string;
   "id"?: number;
-  roles?: Role[];
 }
 
 export class Language implements LanguageInterface {
   "name": string;
   "id": number;
-  roles: Role[];
   constructor(data?: LanguageInterface) {
     Object.assign(this, data);
   }
@@ -57,16 +52,6 @@ export class Language implements LanguageInterface {
         },
       },
       relations: {
-        roles: {
-          name: 'roles',
-          type: 'Role[]',
-          model: 'Role',
-          relationType: 'hasMany',
-          modelThrough: 'RoleMapping',
-          keyThrough: 'roleId',
-          keyFrom: 'id',
-          keyTo: 'principalId'
-        },
       }
     }
   }

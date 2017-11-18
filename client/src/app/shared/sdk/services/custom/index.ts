@@ -10,5 +10,6 @@ export * from './MentorProfile';
 export * from './MentorSkill';
 export * from './Skill';
 export * from './UserLanguage';
+export * from './ContactRequest';
 export * from './SDKModels';
 export * from './logger.service';
