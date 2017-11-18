@@ -100,7 +100,7 @@ for(let userId=apprentices.length + 1; userId < (apprentices.length + 1000); use
 
   user.mentorProfileId = mentorProfile.id;
 
-  let sql = `INSERT INTO \`MentorProfile\` (\`id\`, \`hoursPerWeek\`, \`pricePerHour\`, \`levelOfExperience\`, \`headline\`, \`description\`, \`createdAt\`, \`updatedAt\`) VALUES (${mentorProfile.id}, ${mentorProfile.hoursPerWeek}, ${mentorProfile.pricePerHour}, ${mentorProfile.levelOfExperience}, "${mentorProfile.headline}", "${mentorProfile.description}",  "${mentorProfile.createdAt}", "${mentorProfile.updatedAt}")`;
+  let sql = `INSERT INTO \`MentorProfile\` (\`id\`, \`hoursPerWeek\`, \`pricePerHour\`, \`levelOfExperience\`, \`headline\`, \`description\`, \`createdAt\`, \`updatedAt\`) VALUES (${mentorProfile.id}, ${mentorProfile.hoursPerWeek}, ${mentorProfile.pricePerHour}, ${mentorProfile.levelOfExperience}, "${mentorProfile.headline}", "${mentorProfile.description}",  "${mentorProfile.createdAt}", "${mentorProfile.updatedAt}");`;
   console.log(sql);
 
   sql = `INSERT INTO \`MyUser\` (\`id\`, \`email\`, \`firstName\`, \`familyName\`, \`fbId\`) VALUES (${user.id}, "${user.email}", "${user.firstName}", "${user.familyName}", ${user.fbId} );`;
@@ -133,7 +133,7 @@ for(let userId=apprentices.length + 1; userId < (apprentices.length + 1000); use
   const skillCount = faker.random.number(10) + 1;
 
   do {
-    const skillId = faker.random.number(19) + 1;
+    const skillId = faker.random.number(18) + 1;
     if(skillIds.indexOf(skillId) === -1) skillIds.push(skillId);
   } while(skillIds.length < skillCount);
 
