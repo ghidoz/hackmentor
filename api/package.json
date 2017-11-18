@@ -9,7 +9,7 @@
   },
   "scripts": {
     "faker": "node faker",
-    "prestart": "sleep 10 && npm run migrate up && npm run migrate up:test",
+    "prestart": "sleep 10 && npm run migrate up && npm run migrate up:test && yarn sdk",
     "start": "nodemon server.js",
     "migrate": "db-migrate --config migrations/config.json -e development",
     "sdk": "./node_modules/.bin/lb-sdk server /usr/client/src/app/shared/sdk -w enabled"

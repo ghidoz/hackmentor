@@ -6,7 +6,6 @@ import {
 
 declare var Object: any;
 export interface MentorSkillInterface {
-  "id"?: number;
   "mentorProfileId"?: number;
   "skillId"?: number;
   mentorProfile?: MentorProfile;
@@ -14,7 +13,6 @@ export interface MentorSkillInterface {
 }
 
 export class MentorSkill implements MentorSkillInterface {
-  "id": number;
   "mentorProfileId": number;
   "skillId": number;
   mentorProfile: MentorProfile;
@@ -50,12 +48,8 @@ export class MentorSkill implements MentorSkillInterface {
       name: 'MentorSkill',
       plural: 'MentorSkills',
       path: 'MentorSkills',
-      idName: 'id',
+      idName: 'mentorProfileId',
       properties: {
-        "id": {
-          name: 'id',
-          type: 'number'
-        },
         "mentorProfileId": {
           name: 'mentorProfileId',
           type: 'number'

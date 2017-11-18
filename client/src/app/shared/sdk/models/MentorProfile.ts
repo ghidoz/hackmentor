@@ -1,22 +1,32 @@
 /* tslint:disable */
+import {
+  MyUser,
+  MentorSkill
+} from '../index';
 
 declare var Object: any;
 export interface MentorProfileInterface {
   "hoursPerWeek": number;
   "pricePerHour": number;
-  "levelOfExperience": string;
+  "levelOfExperience": number;
   "headline": string;
   "description": string;
   "id"?: number;
+  "userId"?: number;
+  user?: MyUser;
+  skills?: MentorSkill[];
 }
 
 export class MentorProfile implements MentorProfileInterface {
   "hoursPerWeek": number;
   "pricePerHour": number;
-  "levelOfExperience": string;
+  "levelOfExperience": number;
   "headline": string;
   "description": string;
   "id": number;
+  "userId": number;
+  user: MyUser;
+  skills: MentorSkill[];
   constructor(data?: MentorProfileInterface) {
     Object.assign(this, data);
   }
@@ -60,7 +70,7 @@ export class MentorProfile implements MentorProfileInterface {
         },
         "levelOfExperience": {
           name: 'levelOfExperience',
-          type: 'string'
+          type: 'number'
         },
         "headline": {
           name: 'headline',
@@ -74,8 +84,28 @@ export class MentorProfile implements MentorProfileInterface {
           name: 'id',
           type: 'number'
         },
+        "userId": {
+          name: 'userId',
+          type: 'number'
+        },
       },
       relations: {
+        user: {
+          name: 'user',
+          type: 'MyUser',
+          model: 'MyUser',
+          relationType: 'belongsTo',
+                  keyFrom: 'userId',
+          keyTo: 'id'
+        },
+        skills: {
+          name: 'skills',
+          type: 'MentorSkill[]',
+          model: 'MentorSkill',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'mentorProfileId'
+        },
       }
     }
   }
