@@ -6,19 +6,17 @@ import {
 
 declare var Object: any;
 export interface GoalSkillInterface {
-  "level": string;
-  "id"?: number;
   "goalId"?: number;
   "skillId"?: number;
+  "level": string;
   goal?: Goal;
   skill?: Skill;
 }
 
 export class GoalSkill implements GoalSkillInterface {
-  "level": string;
-  "id": number;
   "goalId": number;
   "skillId": number;
+  "level": string;
   goal: Goal;
   skill: Skill;
   constructor(data?: GoalSkillInterface) {
@@ -52,16 +50,8 @@ export class GoalSkill implements GoalSkillInterface {
       name: 'GoalSkill',
       plural: 'GoalSkills',
       path: 'GoalSkills',
-      idName: 'id',
+      idName: 'goalId',
       properties: {
-        "level": {
-          name: 'level',
-          type: 'string'
-        },
-        "id": {
-          name: 'id',
-          type: 'number'
-        },
         "goalId": {
           name: 'goalId',
           type: 'number'
@@ -69,6 +59,10 @@ export class GoalSkill implements GoalSkillInterface {
         "skillId": {
           name: 'skillId',
           type: 'number'
+        },
+        "level": {
+          name: 'level',
+          type: 'string'
         },
       },
       relations: {
