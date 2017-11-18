@@ -51,7 +51,7 @@
       "principalType": "ROLE",
       "principalId": "$unauthenticated",
       "permission": "ALLOW",
-      "property": "authenticate"
+      "property": "fbAuthentication"
     }
   ],
   "methods": {
