@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import {environment} from '../environments/environment';
-import {LoopBackConfig} from './shared/sdk/lb.config';
-import {HeroCategoryApi} from "./shared/sdk/services/custom/HeroCategory";
+import { environment } from '../environments/environment';
+import { LoopBackConfig } from './shared/sdk/lb.config';
+import { FacebookService, InitParams } from 'ngx-facebook';
 
 @Component({
   selector: 'hm-root',
@@ -10,8 +10,9 @@ import {HeroCategoryApi} from "./shared/sdk/services/custom/HeroCategory";
 })
 export class AppComponent {
 
-  constructor() {
+  constructor(private fb: FacebookService) {
     // Configure loopback
     LoopBackConfig.setBaseURL(environment.loopback.baseUrl);
+    fb.init(environment.facebook);
   }
 }

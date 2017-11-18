@@ -7,5 +7,10 @@ export const environment = {
   production: false,
   loopback: {
     baseUrl: '//localhost:3000'
+  },
+  facebook: {
+    appId: '389552154797907',
+    xfbml: true,
+    version: 'v2.8'
   }
 };
