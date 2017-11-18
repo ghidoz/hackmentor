@@ -78,7 +78,7 @@ function authenticate(MyUser) {
       password: 'pa55word',
       firstName: profile.first_name,
       familyName: profile.last_name,
-      profilePic: profile.picture,
+      profilePic: profile.picture.data.url,
       location: profile.location ? profile.location.name : null
     };
 
