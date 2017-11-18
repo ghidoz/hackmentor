@@ -4,7 +4,7 @@ CREATE TABLE `AccessToken` (
   scopes            VARCHAR(128) NOT NULL DEFAULT '["DEFAULT"]',
   created           DATETIME NOT NULL DEFAULT NOW(),
   userId            INT(11) NOT NULL
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `ACL` (
   id                INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -14,7 +14,7 @@ CREATE TABLE `ACL` (
   permission        VARCHAR(512) NOT NULL,
   principalType     VARCHAR(512) NOT NULL,
   principalId       VARCHAR(512) NOT NULL
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `Role` (
   id                INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -22,14 +22,14 @@ CREATE TABLE `Role` (
   description       VARCHAR(512) NOT NULL,
   created           DATETIME NOT NULL DEFAULT NOW(),
   modified          DATETIME NOT NULL DEFAULT NOW()
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `RoleMapping` (
   id                INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   principalType     VARCHAR(512) NOT NULL,
   principalId       VARCHAR(512) NOT NULL,
   roleId            INT(11) NOT NULL
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `User` (
   id                INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -39,5 +39,5 @@ CREATE TABLE `User` (
   email             VARCHAR(512),
   emailVerified     BOOLEAN NOT NULL DEFAULT FALSE,
   verificationToken VARCHAR(512)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
