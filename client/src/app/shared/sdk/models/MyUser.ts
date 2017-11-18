@@ -8,6 +8,7 @@ declare var Object: any;
 export interface MyUserInterface {
   "firstName"?: string;
   "familyName"?: string;
+  "profilePic"?: string;
   "fbId": number;
   "location"?: string;
   "mentorProfileId"?: number;
@@ -25,6 +26,7 @@ export interface MyUserInterface {
 export class MyUser implements MyUserInterface {
   "firstName": string;
   "familyName": string;
+  "profilePic": string;
   "fbId": number;
   "location": string;
   "mentorProfileId": number;
@@ -76,6 +78,10 @@ export class MyUser implements MyUserInterface {
         },
         "familyName": {
           name: 'familyName',
+          type: 'string'
+        },
+        "profilePic": {
+          name: 'profilePic',
           type: 'string'
         },
         "fbId": {

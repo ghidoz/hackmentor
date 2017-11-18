@@ -34,7 +34,7 @@ function filterMentors(MyUser) {
           mp.levelOfExperience                                                                                           \
         FROM \`MyUser\` u                                                                                 \
         LEFT JOIN \`MentorProfile\` mp ON u.mentorProfileId = mp.id                                       \
-        WHERE                                                                                             \                 
+        WHERE                                                                                             \
           u.mentorProfileId IS NOT NULL AND                                                               \
           mp.pricePerHour BETWEEN ${pricePerHour.min || 0} AND ${pricePerHour.max || 1000} AND               \
           mp.hoursPerWeek BETWEEN ${hoursPerWeek.min || 0} AND ${hoursPerWeek.max || 40} AND                 \
@@ -78,6 +78,7 @@ function authenticate(MyUser) {
       password: 'pa55word',
       firstName: profile.first_name,
       familyName: profile.last_name,
+      profilePic: profile.picture,
       location: profile.location ? profile.location.name : null
     };
 
@@ -94,7 +95,7 @@ function authenticate(MyUser) {
 function getProfile(accessToken) {
 
   return new Promise((resolve, reject) => {
-    graph.get(`/me?access_token=${accessToken}&fields=id,first_name,last_name,email,location,timezone`, (err, result) => {
+    graph.get(`/me?access_token=${accessToken}&fields=id,first_name,last_name,picture.type(large),email,location,timezone`, (err, result) => {
       if (err) return reject(err);
       resolve(result);
     });

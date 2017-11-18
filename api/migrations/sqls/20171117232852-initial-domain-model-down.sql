@@ -17,6 +17,7 @@ ALTER TABLE `MyUser`
   DROP COLUMN `location`,
   DROP COLUMN `mentorProfileId`,
   DROP COLUMN `apprenticeProfileId`,
+  DROP COLUMN `profilePic`,
   DROP COLUMN `createdAt`,
   DROP COLUMN `updatedAt`;
 

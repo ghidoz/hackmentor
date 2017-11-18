@@ -12,6 +12,7 @@
   "properties": {
     "firstName": "string",
     "familyName": "string",
+    "profilePic": "string",
     "fbId": {
       "type": "number",
       "required": true
