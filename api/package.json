@@ -18,7 +18,7 @@
     "cors": "~2.8",
     "db-migrate": "~0.10.0-beta.24",
     "extend": "~3.0",
-    "facebookgraph": "^0.3.0",
+    "fbgraph": "^1.4.1",
     "helmet": "~3.8",
     "loopback": "~3.11",
     "loopback-boot": "~3.0",
