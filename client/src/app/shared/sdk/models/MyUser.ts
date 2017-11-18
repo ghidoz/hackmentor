@@ -1,6 +1,7 @@
 /* tslint:disable */
 import {
-  Role
+  Role,
+  MentorProfile
 } from '../index';
 
 declare var Object: any;
@@ -10,7 +11,6 @@ export interface MyUserInterface {
   "fbId": number;
   "location"?: string;
   "mentorProfileId"?: number;
-  "apprenticeProfileId"?: number;
   "realm"?: string;
   "username"?: string;
   "email": string;
@@ -19,6 +19,7 @@ export interface MyUserInterface {
   "password"?: string;
   accessTokens?: any[];
   roles?: Role[];
+  mentorProfile?: MentorProfile;
 }
 
 export class MyUser implements MyUserInterface {
@@ -27,7 +28,6 @@ export class MyUser implements MyUserInterface {
   "fbId": number;
   "location": string;
   "mentorProfileId": number;
-  "apprenticeProfileId": number;
   "realm": string;
   "username": string;
   "email": string;
@@ -36,6 +36,7 @@ export class MyUser implements MyUserInterface {
   "password": string;
   accessTokens: any[];
   roles: Role[];
+  mentorProfile: MentorProfile;
   constructor(data?: MyUserInterface) {
     Object.assign(this, data);
   }
@@ -89,10 +90,6 @@ export class MyUser implements MyUserInterface {
           name: 'mentorProfileId',
           type: 'number'
         },
-        "apprenticeProfileId": {
-          name: 'apprenticeProfileId',
-          type: 'number'
-        },
         "realm": {
           name: 'realm',
           type: 'string'
@@ -136,6 +133,14 @@ export class MyUser implements MyUserInterface {
           keyThrough: 'roleId',
           keyFrom: 'id',
           keyTo: 'principalId'
+        },
+        mentorProfile: {
+          name: 'mentorProfile',
+          type: 'MentorProfile',
+          model: 'MentorProfile',
+          relationType: 'hasOne',
+                  keyFrom: 'id',
+          keyTo: 'userId'
         },
       }
     }

@@ -8,16 +8,14 @@ declare var Object: any;
 export interface HeroSkillInterface {
   "heroCategoryId"?: number;
   "skillId"?: number;
-  "heroId"?: number;
-  hero?: HeroCategory;
+  heroCategory?: HeroCategory;
   skill?: Skill;
 }
 
 export class HeroSkill implements HeroSkillInterface {
   "heroCategoryId": number;
   "skillId": number;
-  "heroId": number;
-  hero: HeroCategory;
+  heroCategory: HeroCategory;
   skill: Skill;
   constructor(data?: HeroSkillInterface) {
     Object.assign(this, data);
@@ -60,18 +58,14 @@ export class HeroSkill implements HeroSkillInterface {
           name: 'skillId',
           type: 'number'
         },
-        "heroId": {
-          name: 'heroId',
-          type: 'number'
-        },
       },
       relations: {
-        hero: {
-          name: 'hero',
+        heroCategory: {
+          name: 'heroCategory',
           type: 'HeroCategory',
           model: 'HeroCategory',
           relationType: 'belongsTo',
-                  keyFrom: 'heroId',
+                  keyFrom: 'heroCategoryId',
           keyTo: 'id'
         },
         skill: {

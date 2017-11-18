@@ -5,14 +5,12 @@ import {
 
 declare var Object: any;
 export interface LanguageInterface {
-  "code": string;
   "name": string;
   "id"?: number;
   roles?: Role[];
 }
 
 export class Language implements LanguageInterface {
-  "code": string;
   "name": string;
   "id": number;
   roles: Role[];
@@ -49,10 +47,6 @@ export class Language implements LanguageInterface {
       path: 'Languages',
       idName: 'id',
       properties: {
-        "code": {
-          name: 'code',
-          type: 'string'
-        },
         "name": {
           name: 'name',
           type: 'string'
