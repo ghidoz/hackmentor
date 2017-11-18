@@ -6,6 +6,9 @@ import { HomeModule } from './home/home.module';
 import { CoreModule } from './core/core.module';
 import { SDKBrowserModule } from './shared/sdk/index';
 import { FacebookModule } from 'ngx-facebook';
+import { MentorsModule } from './mentors/mentors.module';
+import { HttpClientModule } from '@angular/common/http';
+import { LayoutModule } from './layout/layout.module';
 
 
 @NgModule({
@@ -17,8 +20,11 @@ import { FacebookModule } from 'ngx-facebook';
     AppRoutingModule,
     CoreModule.forRoot(),
     HomeModule,
+    MentorsModule,
     SDKBrowserModule.forRoot(),
-    FacebookModule.forRoot()
+    FacebookModule.forRoot(),
+    HttpClientModule,
+    LayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

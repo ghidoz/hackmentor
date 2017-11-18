@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="col-auto mr-auto">
+    <img src="/assets/images/logo.svg" class="logo" />
+  </div>
+  <div class="col-auto" *ngIf="user">
+    <a class="profile" href="#">
+      {{user.firstName + ' ' + user.familyName}} <img src="https://graph.facebook.com/v2.11/537461288/picture/small" class="user-picture small" />
+    </a>
+  </div>
+</div>

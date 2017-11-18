@@ -1,0 +1,28 @@
+<header class="header">
+  <div class="container">
+    <h1>Mentors</h1>
+    <p>Find a mentor that will help you with your goals</p>
+  </div>
+</header>
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+      <div class="box">
+        <div class="box-content">
+          <button class="btn btn-primary btn-block btn-cta">Add New Goal</button>
+          <hm-menu></hm-menu>
+        </div>
+      </div>
+    </div>
+    <div class="col-9">
+      <div class="mentors-list box">
+        <div class="box-header">
+          <div class="float-left"><b>234</b> Mentors match your needs</div>
+          <div class="float-right filter">
+            <a href="">Filter</a></div>
+        </div>
+        <hm-mentor-item class="box-item" *ngFor="let mentor of mentors" [mentor]="mentor"></hm-mentor-item>
+      </div>
+    </div>
+  </div>
+</div>

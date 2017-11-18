@@ -1,0 +1,27 @@
+@import '~styles/variables/variables';
+
+header {
+  background: url(/assets/images/bg-header-dark.jpg) no-repeat;
+  background-size: cover;
+}
+
+label {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.mentor-profile {
+  .box-content {
+    padding: 40px;
+  }
+  .row {
+    margin: 0;
+  }
+  label {
+    padding-left: 0;
+    margin-bottom: 30px;
+  }
+  .description {
+    color: $grey;
+  }
+}

@@ -1,0 +1,16 @@
+<a [routerLink]="['/mentors/' + mentor.id]">
+  <img src="https://placeimg.com/60/60/people?{{ imageId }}" class="user-picture small" />
+  <div class="info">
+    <h2>{{mentor.firstName}} {{mentor.familyName}}</h2>
+    <p class="headline">{{mentor.mentorProfile.headline}}</p>
+    <span *ngFor="let skill of mentor.mentorProfile.skills | slice:0:6" class="badge badge-primary">
+      {{skill.skill.name}}
+    </span>
+  </div>
+  <div class="ratings">
+    245 Ratings
+  </div>
+  <div class="rate">
+    {{mentor.mentorProfile.pricePerHour | currency }} / h
+  </div>
+</a>

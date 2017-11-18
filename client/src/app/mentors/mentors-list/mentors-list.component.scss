@@ -1,0 +1,28 @@
+@import '~styles/variables/variables';
+
+header {
+  background: url(/assets/images/bg-header.jpg) no-repeat;
+  background-size: cover;
+}
+
+.box-header {
+  font-size: 14px;
+}
+
+.filter {
+  border-left: 1px solid $border-color;
+  padding-left: 20px;
+  margin-top: -20px;
+  margin-bottom: -20px;
+  height: 61px;
+  line-height: 61px;
+  a {
+    font-weight: bold;
+    background: url(/assets/icons/icn-filter.svg) no-repeat center right;
+    display: block;
+    padding-right: 26px;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
