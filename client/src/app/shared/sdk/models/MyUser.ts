@@ -7,6 +7,10 @@ declare var Object: any;
 export interface MyUserInterface {
   "firstName"?: string;
   "familyName"?: string;
+  "fbId": number;
+  "location"?: string;
+  "mentorProfileId"?: number;
+  "apprenticeProfileId"?: number;
   "realm"?: string;
   "username"?: string;
   "email": string;
@@ -20,6 +24,10 @@ export interface MyUserInterface {
 export class MyUser implements MyUserInterface {
   "firstName": string;
   "familyName": string;
+  "fbId": number;
+  "location": string;
+  "mentorProfileId": number;
+  "apprenticeProfileId": number;
   "realm": string;
   "username": string;
   "email": string;
@@ -68,6 +76,22 @@ export class MyUser implements MyUserInterface {
         "familyName": {
           name: 'familyName',
           type: 'string'
+        },
+        "fbId": {
+          name: 'fbId',
+          type: 'number'
+        },
+        "location": {
+          name: 'location',
+          type: 'string'
+        },
+        "mentorProfileId": {
+          name: 'mentorProfileId',
+          type: 'number'
+        },
+        "apprenticeProfileId": {
+          name: 'apprenticeProfileId',
+          type: 'number'
         },
         "realm": {
           name: 'realm',

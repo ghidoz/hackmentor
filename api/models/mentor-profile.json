@@ -1,0 +1,39 @@
+{
+  "name": "MentorProfile",
+  "idInjection": true,
+  "mixins": {
+    "EnhancedContext": {}
+  },
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "hoursPerWeek": {
+      "type": "number",
+      "required": true
+    },
+    "pricePerHour": {
+      "type": "number",
+      "required": true
+    },
+    "levelOfExperience": {
+      "type": "string",
+      "required": true
+    },
+    "headline": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "scope": {
+  },
+  "validations": [],
+  "relations": {
+  },
+  "acls": [],
+  "methods": {}
+}

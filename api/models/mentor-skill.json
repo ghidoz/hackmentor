@@ -1,0 +1,27 @@
+{
+  "name": "MentorSkill",
+  "idInjection": true,
+  "mixins": {
+    "EnhancedContext": {}
+  },
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+  },
+  "scope": {
+  },
+  "validations": [],
+  "relations": {
+    "mentorProfile": {
+      "type": "belongsTo",
+      "model": "MentorProfile"
+    },
+    "skill": {
+      "type": "belongsTo",
+      "model": "Skill"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

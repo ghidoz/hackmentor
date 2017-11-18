@@ -51,6 +51,15 @@ import { SocketConnection } from './sockets/socket.connections';
 import { RealTime } from './services/core/real.time';
 import { RoleApi } from './services/custom/Role';
 import { MyUserApi } from './services/custom/MyUser';
+import { GoalApi } from './services/custom/Goal';
+import { GoalSkillApi } from './services/custom/GoalSkill';
+import { HeroCategoryApi } from './services/custom/HeroCategory';
+import { HeroSkillApi } from './services/custom/HeroSkill';
+import { LanguageApi } from './services/custom/Language';
+import { MentorProfileApi } from './services/custom/MentorProfile';
+import { MentorSkillApi } from './services/custom/MentorSkill';
+import { SkillApi } from './services/custom/Skill';
+import { UserLanguageApi } from './services/custom/UserLanguage';
 /**
 * @module SDKBrowserModule
 * @description
@@ -84,6 +93,15 @@ export class SDKBrowserModule {
         RealTime,
         RoleApi,
         MyUserApi,
+        GoalApi,
+        GoalSkillApi,
+        HeroCategoryApi,
+        HeroSkillApi,
+        LanguageApi,
+        MentorProfileApi,
+        MentorSkillApi,
+        SkillApi,
+        UserLanguageApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser },
         { provide: SocketDriver, useClass: SocketBrowser }

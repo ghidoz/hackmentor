@@ -1,0 +1,27 @@
+{
+  "name": "HeroCategory",
+  "idInjection": true,
+  "mixins": {
+    "EnhancedContext": {}
+  },
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "scope": {
+  },
+  "validations": [],
+  "relations": {
+    "skills": {
+      "type": "hasMany",
+      "model": "Skill"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

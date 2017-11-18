@@ -43,5 +43,41 @@
   "MyUser": {
     "dataSource": "db",
     "public": true
+  },
+  "Goal": {
+    "dataSource": "db",
+    "public": true
+  },
+  "GoalSkill": {
+    "dataSource": "db",
+    "public": true
+  },
+  "HeroCategory": {
+    "dataSource": "db",
+    "public": true
+  },
+  "HeroSkill": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Language": {
+    "dataSource": "db",
+    "public": true
+  },
+  "MentorProfile": {
+    "dataSource": "db",
+    "public": true
+  },
+  "MentorSkill": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Skill": {
+    "dataSource": "db",
+    "public": true
+  },
+  "UserLanguage": {
+    "dataSource": "db",
+    "public": true
   }
 }

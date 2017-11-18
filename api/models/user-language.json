@@ -1,0 +1,28 @@
+{
+  "name": "UserLanguage",
+  "idInjection": true,
+  "mixins": {
+    "EnhancedContext": {}
+  },
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+  },
+  "scope": {
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "MyUser",
+      "foreignKey": "userId"
+    },
+    "language": {
+      "type": "belongsTo",
+      "model": "Language"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

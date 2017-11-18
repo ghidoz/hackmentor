@@ -1,0 +1,41 @@
+{
+  "name": "ContactRequest",
+  "idInjection": true,
+  "mixins": {
+    "EnhancedContext": {}
+  },
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "message": {
+      "type": "string",
+      "required": true
+    },
+    "status": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "scope": {
+  },
+  "validations": [],
+  "relations": {
+    "goal": {
+      "type": "belongsTo",
+      "model": "Goal"
+    },
+    "sender": {
+      "type": "belongsTo",
+      "model": "MyUser",
+      "foreignKey": "senderId"
+    },
+    "recipient": {
+      "type": "belongsTo",
+      "model": "MyUser",
+      "foreignKey": "recipientId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

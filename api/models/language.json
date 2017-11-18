@@ -1,29 +1,23 @@
 {
-  "name": "MyUser",
-  "base": "User",
+  "name": "Language",
   "idInjection": true,
   "mixins": {
     "EnhancedContext": {}
   },
   "options": {
-    "realmRequired": false,
     "validateUpsert": true
   },
   "properties": {
-    "firstName": "string",
-    "familyName": "string",
-    "fbId": {
-      "type": "number",
+    "code": {
+      "type": "string",
       "required": true
     },
-    "location": "string",
-    "mentorProfileId": "number",
-    "apprenticeProfileId": "number"
+    "name": {
+      "type": "string",
+      "required": true
+    }
   },
   "scope": {
-      "include": [
-        "roles"
-      ]
   },
   "validations": [],
   "relations": {

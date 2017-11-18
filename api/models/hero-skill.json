@@ -1,0 +1,28 @@
+{
+  "name": "HeroSkill",
+  "idInjection": true,
+  "mixins": {
+    "EnhancedContext": {}
+  },
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+  },
+  "scope": {
+  },
+  "validations": [],
+  "relations": {
+    "hero": {
+      "type": "belongsTo",
+      "model": "HeroCategory",
+      "foreignKey": "heroId"
+    },
+    "skill": {
+      "type": "belongsTo",
+      "model": "Skill"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

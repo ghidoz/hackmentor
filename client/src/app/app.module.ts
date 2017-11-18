@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
 import { CoreModule } from './core/core.module';
 import { environment } from '../environments/environment';
+import {SDKBrowserModule} from "./shared/sdk/index";
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { environment } from '../environments/environment';
     BrowserModule,
     AppRoutingModule,
     CoreModule.forRoot(),
-    HomeModule
+    HomeModule,
+    SDKBrowserModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
