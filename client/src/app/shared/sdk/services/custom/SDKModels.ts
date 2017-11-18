@@ -11,6 +11,7 @@ import { MentorProfile } from '../../models/MentorProfile';
 import { MentorSkill } from '../../models/MentorSkill';
 import { Skill } from '../../models/Skill';
 import { UserLanguage } from '../../models/UserLanguage';
+import { ContactRequest } from '../../models/ContactRequest';
 
 export interface Models { [name: string]: any }
 
@@ -29,6 +30,7 @@ export class SDKModels {
     MentorSkill: MentorSkill,
     Skill: Skill,
     UserLanguage: UserLanguage,
+    ContactRequest: ContactRequest,
     
   };
 
