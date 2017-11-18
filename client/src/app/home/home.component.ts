@@ -4,6 +4,7 @@ import { MyUserApi } from '../shared/sdk/services/custom/MyUser';
 import { SDKToken } from '../shared/sdk/models/BaseModels';
 import { LoopBackAuth } from '../shared/sdk/services/core/auth.service';
 import { MyUser } from '../shared/sdk/models/MyUser';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'hm-home',
@@ -15,7 +16,8 @@ export class HomeComponent implements OnInit {
 
   constructor(private fb: FacebookService,
               private myUser: MyUserApi,
-              private auth: LoopBackAuth) {
+              private auth: LoopBackAuth,
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -31,6 +33,7 @@ export class HomeComponent implements OnInit {
           accessToken.rememberMe = true;
           this.auth.setToken(accessToken);
           this.user = accessToken.user;
+          this.router.navigate(['mentors/list']);
         });
       })
       .catch((error: any) => console.error(error));
