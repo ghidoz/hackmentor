@@ -30,8 +30,8 @@ services:
     ports:
     - 4200:4200
     volumes:
-    - ./client:/usr/client
-    - ./api:/usr/api
+    - ./client:/usr/client:consistent
+    - ./api:/usr/api:consistent
     entrypoint: sh -c "yarn install && yarn start"
 
   api:
@@ -44,8 +44,8 @@ services:
     ports:
     - "3000:3000"
     volumes:
-    - ./api:/usr/api
-    - ./client:/usr/client
+    - ./api:/usr/api:consistent
+    - ./client:/usr/client:consistent
     entrypoint: sh -c "yarn install && yarn start"
     environment:
       DATABASE_URL: mysql://hackmentors:hackmentors@db/hackmentors
