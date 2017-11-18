@@ -4,7 +4,6 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "prestart": "yarn sdk",
     "start": "ng serve --disable-host-check",
     "build": "ng build",
     "test": "ng test",
@@ -25,6 +24,7 @@
     "@angular/router": "^5.0.0",
     "bootstrap": "4.0.0-beta.2",
     "core-js": "^2.4.1",
+    "ngx-facebook": "^2.4.0",
     "rxjs": "^5.5.2",
     "zone.js": "^0.8.14"
   },

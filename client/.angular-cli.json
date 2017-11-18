@@ -62,7 +62,8 @@
       "spec": false
     },
     "component": {
-      "spec": false
+      "spec": false,
+      "viewEncapsulation": "Emulated"
     },
     "directive": {
       "spec": false
