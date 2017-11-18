@@ -4,13 +4,11 @@ ALTER TABLE `MyUser`
   ADD COLUMN `fbId` BIGINT NOT NULL,
   ADD COLUMN `location` VARCHAR(128) NULL,
   ADD COLUMN `mentorProfileId` INT(11) NULL,
-  ADD COLUMN `apprenticeProfileId` INT(11) NULL,
   ADD COLUMN `createdAt` DATETIME NOT NULL DEFAULT NOW(),
   ADD COLUMN `updatedAt` DATETIME NOT NULL DEFAULT NOW();
 
 CREATE TABLE `Language` (
   `id` INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `code` VARCHAR(2) NOT NULL,
   `name` VARCHAR(64) NOT NULL,
   `createdAt` DATETIME NOT NULL DEFAULT NOW(),
   `updatedAt` DATETIME NOT NULL DEFAULT NOW()
@@ -19,7 +17,8 @@ CREATE TABLE `Language` (
 CREATE TABLE `UserLanguage` (
   `userId` INT(11) NOT NULL,
   `languageId` INT(11) NOT NULL,
-  `createdAt` DATETIME NOT NULL DEFAULT NOW()
+  `createdAt` DATETIME NOT NULL DEFAULT NOW(),
+  PRIMARY KEY (`userId`, `languageId`)
 );
 
 ALTER TABLE `UserLanguage`
@@ -43,13 +42,14 @@ CREATE TABLE `Skill` (
 );
 
 CREATE TABLE `HeroSkill` (
-  `heroId` INT(11) NOT NULL,
+  `heroCategoryId` INT(11) NOT NULL,
   `skillId` INT(11) NOT NULL,
-  `createdAt` DATETIME NOT NULL DEFAULT NOW()
+  `createdAt` DATETIME NOT NULL DEFAULT NOW(),
+  PRIMARY KEY (`heroCategoryId`, `skillId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 ALTER TABLE `HeroSkill`
-  ADD CONSTRAINT `fk_HeroSkill_Hero_heroId` FOREIGN KEY (heroId) REFERENCES `HeroCategory` (`id`);
+  ADD CONSTRAINT `fk_HeroSkill_Hero_heroId` FOREIGN KEY (heroCategoryId) REFERENCES `HeroCategory` (`id`);
 
 ALTER TABLE `HeroSkill`
   ADD CONSTRAINT `fk_HeroSkill_Skill_skillId` FOREIGN KEY (skillId) REFERENCES `Skill` (`id`);
@@ -59,7 +59,7 @@ CREATE TABLE `MentorProfile` (
   `id` INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `hoursPerWeek` INT(2) NOT NULL,
   `pricePerHour` INT(3) NOT NULL,
-  `levelOfExperience` VARCHAR(64) NOT NULL,
+  `levelOfExperience` INT(1) NOT NULL,
   `headline` VARCHAR(256) NOT NULL,
   `description` VARCHAR(2048) NULL,
   `createdAt` DATETIME NOT NULL DEFAULT NOW(),
@@ -69,7 +69,8 @@ CREATE TABLE `MentorProfile` (
 CREATE TABLE `MentorSkill` (
   `mentorProfileId` INT(11) NOT NULL,
   `skillId` INT(11) NOT NULL,
-  `createdAt` DATETIME NOT NULL DEFAULT NOW()
+  `createdAt` DATETIME NOT NULL DEFAULT NOW(),
+  PRIMARY KEY(`mentorProfileId`, `skillId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 ALTER TABLE `MentorSkill`
@@ -102,7 +103,8 @@ CREATE TABLE `GoalSkill` (
   `goalId` INT(11) NOT NULL,
   `skillId` INT(11) NOT NULL,
   `level` VARCHAR(64) NOT NULL,
-  `createdAt` DATETIME NOT NULL DEFAULT NOW()
+  `createdAt` DATETIME NOT NULL DEFAULT NOW(),
+  PRIMARY KEY (`goalId`, `skillId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 ALTER TABLE `GoalSkill`

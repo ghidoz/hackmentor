@@ -6,17 +6,17 @@ import {
 
 declare var Object: any;
 export interface HeroSkillInterface {
-  "id"?: number;
-  "heroId"?: number;
+  "heroCategoryId"?: number;
   "skillId"?: number;
+  "heroId"?: number;
   hero?: HeroCategory;
   skill?: Skill;
 }
 
 export class HeroSkill implements HeroSkillInterface {
-  "id": number;
-  "heroId": number;
+  "heroCategoryId": number;
   "skillId": number;
+  "heroId": number;
   hero: HeroCategory;
   skill: Skill;
   constructor(data?: HeroSkillInterface) {
@@ -50,18 +50,18 @@ export class HeroSkill implements HeroSkillInterface {
       name: 'HeroSkill',
       plural: 'HeroSkills',
       path: 'HeroSkills',
-      idName: 'id',
+      idName: 'heroCategoryId',
       properties: {
-        "id": {
-          name: 'id',
-          type: 'number'
-        },
-        "heroId": {
-          name: 'heroId',
+        "heroCategoryId": {
+          name: 'heroCategoryId',
           type: 'number'
         },
         "skillId": {
           name: 'skillId',
+          type: 'number'
+        },
+        "heroId": {
+          name: 'heroId',
           type: 'number'
         },
       },

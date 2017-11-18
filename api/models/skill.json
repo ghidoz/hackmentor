@@ -17,6 +17,15 @@
   },
   "validations": [],
   "relations": {
+    "heroSkills": {
+      "type": "hasMany",
+      "model": "HeroSkill"
+    },
+    "heroCategories": {
+      "type": "hasMany",
+      "model": "HeroCategory",
+      "through": "HeroSkill"
+    }
   },
   "acls": [
     {

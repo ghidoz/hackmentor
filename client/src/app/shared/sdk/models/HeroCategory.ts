@@ -62,8 +62,10 @@ export class HeroCategory implements HeroCategoryInterface {
           type: 'Skill[]',
           model: 'Skill',
           relationType: 'hasMany',
-                  keyFrom: 'id',
-          keyTo: 'heroCategoryId'
+          modelThrough: 'HeroSkill',
+          keyThrough: 'skillId',
+          keyFrom: 'id',
+          keyTo: 'skillId'
         },
       }
     }

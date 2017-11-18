@@ -4,13 +4,11 @@ declare var Object: any;
 export interface SkillInterface {
   "name": string;
   "id"?: number;
-  "heroCategoryId"?: number;
 }
 
 export class Skill implements SkillInterface {
   "name": string;
   "id": number;
-  "heroCategoryId": number;
   constructor(data?: SkillInterface) {
     Object.assign(this, data);
   }
@@ -50,10 +48,6 @@ export class Skill implements SkillInterface {
         },
         "id": {
           name: 'id',
-          type: 'number'
-        },
-        "heroCategoryId": {
-          name: 'heroCategoryId',
           type: 'number'
         },
       },

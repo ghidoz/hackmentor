@@ -17,7 +17,7 @@
       "required": true
     },
     "levelOfExperience": {
-      "type": "string",
+      "type": "number",
       "required": true
     },
     "headline": {
