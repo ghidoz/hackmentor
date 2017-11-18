@@ -1,8 +1,16 @@
 @import '~styles/variables/variables';
 
 :host {
+  display: block;
+}
+
+a {
   display: flex;
   font-size: 14px;
+  color: $black;
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .user-picture {
@@ -17,15 +25,10 @@ h2 {
 
 .headline {
   line-height: 1.43;
-  color: $black;
 }
 
 .info {
   flex-basis: 100%;
-}
-
-.badge {
-  margin-right: 5px;
 }
 
 .ratings {

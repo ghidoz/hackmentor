@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { MentorsComponent } from './mentors.component';
 import { MentorsListComponent } from './mentors-list/mentors-list.component';
+import { MentorProfileComponent } from './mentor-profile/mentor-profile.component';
+import { MentorResolverService } from './mentor-profile/mentor-resolver.service';
 
 const routes: Routes = [
   {
@@ -12,6 +14,13 @@ const routes: Routes = [
       {
         path: 'list',
         component: MentorsListComponent
+      },
+      {
+        path: ':id',
+        component: MentorProfileComponent,
+        resolve: {
+          mentor: MentorResolverService
+        }
       }
     ]
   },
@@ -26,5 +35,6 @@ export class MentorsRoutingModule {
 
 export const mentorsRoutedComponents = [
   MentorsComponent,
-  MentorsListComponent
+  MentorsListComponent,
+  MentorProfileComponent
 ];
