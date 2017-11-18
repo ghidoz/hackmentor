@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { MentorProfileApi } from '../../shared/sdk/services/custom/MentorProfile';
-import { MentorProfile } from '../../shared/sdk/models/MentorProfile';
+import { MyUserApi } from '../../shared/sdk/services/custom/MyUser';
+import { MyUser } from '../../shared/sdk/models/MyUser';
 
 @Component({
   selector: 'hm-mentors-list',
@@ -10,12 +10,22 @@ import { MentorProfile } from '../../shared/sdk/models/MentorProfile';
 })
 export class MentorsListComponent implements OnInit {
 
-  public mentors: MentorProfile[];
+  public mentors: MyUser[];
 
-  constructor(private mentorProfileApi: MentorProfileApi) { }
+  constructor(private userApi: MyUserApi) { }
 
   ngOnInit() {
-    this.mentorProfileApi.find().subscribe((mentorProfiles: MentorProfile[]) => {
+
+    const filter = {
+      include: 'mentorProfile',
+      where: {
+        mentorProfileId: {
+          gt: 0
+        }
+      }
+    };
+
+    this.userApi.find(filter).subscribe((mentorProfiles: MyUser[]) => {
       this.mentors = mentorProfiles;
     });
   }

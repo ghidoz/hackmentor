@@ -1,13 +1,12 @@
-<img src="https://graph.facebook.com/v2.11/{{'537461288'}}/picture?type=normal" class="user-picture small" />
-<div>
-  <h2>Daniele Ghidoli</h2>
-  <p class="headline">{{mentor.headline}}</p>
-  <span class="badge badge-primary">Angular</span>
-  <span class="badge badge-primary">Firebase</span>
+<img src="https://placeimg.com/60/60/people?{{ imageId }}" class="user-picture small" />
+<div class="info">
+  <h2>{{mentor.firstName}} {{mentor.familyName}}</h2>
+  <p class="headline">{{mentor.mentorProfile.headline}}</p>
+  <span *ngFor="let skill of mentor.mentorProfile.skills" class="badge badge-primary">{{skill.skill.name}}</span>
 </div>
 <div class="ratings">
   245 Ratings
 </div>
 <div class="rate">
-  $60.00 / h
+  {{mentor.mentorProfile.pricePerHour | currency }} / h
 </div>

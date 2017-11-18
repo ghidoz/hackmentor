@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
-import { MentorProfile } from '../../../shared/sdk/models/MentorProfile';
+import { MyUser } from '../../../shared/sdk/models/MyUser';
 
 @Component({
   selector: 'hm-mentor-item',
@@ -9,11 +9,15 @@ import { MentorProfile } from '../../../shared/sdk/models/MentorProfile';
 })
 export class MentorItemComponent implements OnInit {
 
-  @Input() mentor: MentorProfile;
+  @Input() mentor: MyUser;
+  public imageId: number;
 
-  constructor() { }
+  constructor() {
+
+  }
 
   ngOnInit() {
+    this.imageId = Math.random();
   }
 
 }
