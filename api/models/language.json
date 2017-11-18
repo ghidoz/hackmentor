@@ -17,13 +17,6 @@
   },
   "validations": [],
   "relations": {
-    "roles": {
-      "type": "hasMany",
-      "model": "Role",
-      "through": "RoleMapping",
-      "keyThrough": "roleId",
-      "foreignKey": "principalId"
-    }
   },
   "acls": [
     {

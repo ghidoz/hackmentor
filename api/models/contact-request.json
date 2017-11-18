@@ -18,6 +18,7 @@
     }
   },
   "scope": {
+    "include": ["goal", "sender", "recipient"]
   },
   "validations": [],
   "relations": {

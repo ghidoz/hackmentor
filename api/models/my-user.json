@@ -67,6 +67,15 @@
       "description": "Registers or authenticates a user using their facebook token",
       "returns": { "root": true, "type": "AccessToken" },
       "http": { "arg": "get", "path": "/authenticate" }
+    },
+    "filterMentors": {
+      "accepts": [
+        { "arg": "filter", "type": "object", "description": "Not a normal loopback filter object" },
+        { "arg": "options", "type": "object", "http": "optionsFromRequest" }
+      ],
+      "description": "Filters mentors on a range of criteria",
+      "returns": { "root": true, "type": "MyUser" },
+      "http": { "arg": "get", "path": "/filterMentors" }
     }
   }
 }

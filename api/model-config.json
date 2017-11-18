@@ -79,5 +79,9 @@
   "UserLanguage": {
     "dataSource": "db",
     "public": true
+  },
+  "ContactRequest": {
+    "dataSource": "db",
+    "public": true
   }
 }
