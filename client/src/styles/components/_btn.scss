@@ -1,0 +1,13 @@
+.btn {
+  cursor: pointer;
+  &.btn-cta {
+    padding: 0.57rem 0.75rem;
+    background-image: linear-gradient(70deg, $main-color, $main-color-dark);
+    box-shadow: 0 2px 4px 0 rgba(59, 98, 253, 0.3);
+    border: none;
+    font-weight: bold;
+    &:hover {
+      background: $main-color-dark;
+    }
+  }
+}

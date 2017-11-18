@@ -1,0 +1,12 @@
+.box {
+  border-radius: 6px;
+  background-color: white;
+  box-shadow: 0 1px 2px 0 rgba(37, 50, 56, 0.1);
+  .box-container, .box-header, .box-item {
+    padding: 20px;
+  }
+  .box-header, .box-item {
+    border-bottom: 1px solid $border-color;
+    overflow: hidden;
+  }
+}
