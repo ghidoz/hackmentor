@@ -16,16 +16,7 @@ export class MentorsListComponent implements OnInit {
 
   ngOnInit() {
 
-    const filter = {
-      include: 'mentorProfile',
-      where: {
-        mentorProfileId: {
-          gt: 0
-        }
-      }
-    };
-
-    this.userApi.find(filter).subscribe((mentorProfiles: MyUser[]) => {
+    this.userApi.filterMentors().subscribe((mentorProfiles: MyUser[]) => {
       this.mentors = mentorProfiles;
     });
   }
