@@ -1,2 +1,4 @@
-<button (click)="fbLogin()" class="btn btn-primary" *ngIf="!user">Login with Facebook</button>
-<p *ngIf="user">Welcome <b>{{user.firstName}}</b></p>
+<div class="container">
+  <button (click)="fbLogin()" class="btn btn-primary" *ngIf="!user">Login with Facebook</button>
+  <p *ngIf="user">Welcome <b>{{user.firstName}}</b></p>
+</div>
