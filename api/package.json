@@ -8,6 +8,7 @@
     "node": ">=8"
   },
   "scripts": {
+    "faker": "node faker",
     "prestart": "sleep 10 && npm run migrate up && npm run migrate up:test",
     "start": "nodemon server.js",
     "migrate": "db-migrate --config migrations/config.json -e development",
@@ -24,6 +25,7 @@
     "loopback-boot": "~3.0",
     "loopback-component-explorer": "~5.1",
     "loopback-connector-mysql": "~5.1",
+    "momentjs": "^2.0.0",
     "morgan": "^1.9.0",
     "npm-watch": "~0.2",
     "options": "~0.0.6",
@@ -37,6 +39,7 @@
     "domaindoc": "^2.7.4",
     "eslint": "~4.7",
     "eslint-config-loopback": "~8.0",
+    "faker": "^4.1.0",
     "ncp": "~2.0",
     "nodemon": "~1.12",
     "nsp": "~2.8"
