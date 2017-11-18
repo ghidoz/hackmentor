@@ -1,0 +1,40 @@
+@import '~styles/variables/variables';
+
+.modal-body {
+  padding: 40px;
+  h1 {
+    font-size: 14px;
+    font-weight: bold;
+    color: $main-color;
+    text-transform: uppercase;
+    margin-bottom:30px;
+  }
+  label {
+    font-size: 14px;
+    color: $grey;
+  }
+  textarea {
+    min-height: 220px;
+  }
+}
+
+.modal-header {
+  background: $main-color url(/assets/images/contact-success.svg) no-repeat center;
+}
+
+.contacted {
+  .close {
+    color: #ffffff;
+  }
+  .modal-body {
+    text-align: center;
+    h1 {
+      font-size: 16px;
+    }
+    p {
+      font-size:  14px;
+      color: $grey;
+      margin-bottom: 30px;
+    }
+  }
+}

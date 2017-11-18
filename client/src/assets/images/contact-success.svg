@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="130" height="87" viewBox="0 0 130 87">
+    <defs>
+        <path id="a" d="M64.441 81A43.299 43.299 0 0 0 86.5 87c24.024 0 43.5-19.476 43.5-43.5S110.524 0 86.5 0 43 19.476 43 43.5a43.31 43.31 0 0 0 5 20.267V77a4 4 0 0 0 4 4h12.441z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <rect width="19" height="8" y="51" fill="#3B97D9" rx="4"/>
+        <rect width="27" height="8" x="38" y="67" fill="#3B97D9" rx="4"/>
+        <rect width="11" height="8" x="21" y="67" fill="#3B97D9" rx="4"/>
+        <rect width="47" height="10" x="11" y="32" fill="#3B97D9" rx="5"/>
+        <use fill="#FFF" xlink:href="#a"/>
+        <path stroke="#3485BF" stroke-width="3" d="M52 79.5h12.85l.353.208c6.4 3.773 13.7 5.792 21.297 5.792 23.196 0 42-18.804 42-42s-18.804-42-42-42-42 18.804-42 42a41.807 41.807 0 0 0 4.827 19.567l.173.329V77a2.5 2.5 0 0 0 2.5 2.5z"/>
+        <path fill="#42A8F2" fill-rule="nonzero" d="M106.023 31.582l-29.526 7.01 8.58 7.459-16.32 10.11 30.002-6.595-8.58-7.459z"/>
+        <rect width="27" height="12" x="39" y="11" fill="#3B97D9" rx="6"/>
+        <rect width="12" height="12" x="20" y="11" fill="#3B97D9" rx="6"/>
+        <rect width="27" height="8" x="29" y="51" fill="#3B97D9" rx="4"/>
+    </g>
+</svg>
