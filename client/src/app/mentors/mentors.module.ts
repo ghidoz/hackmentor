@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { mentorsRoutedComponents, MentorsRoutingModule } from './mentors.routes';
+import { MentorItemComponent } from './mentors-list/mentor-item/mentor-item.component';
 
 @NgModule({
   imports: [
@@ -8,7 +9,8 @@ import { mentorsRoutedComponents, MentorsRoutingModule } from './mentors.routes'
     MentorsRoutingModule
   ],
   declarations: [
-    mentorsRoutedComponents
+    mentorsRoutedComponents,
+    MentorItemComponent
   ]
 })
 export class MentorsModule { }
