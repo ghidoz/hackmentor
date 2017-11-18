@@ -45,14 +45,14 @@ INSERT INTO `HeroSkill` (heroCategoryId, `skillId`) VALUES
   (3, 9),
   (3, 10);
 
-INSERT INTO `Language` (`name`) VALUES
-  ('English (UK)'),
-  ('English (US)'),
-  ('Spanish'),
-  ('French'),
-  ('Catalan'),
-  ('German'),
-  ('Italian'),
-  ('Portuguese'),
-  ('Dutch'),
-  ('Polish');
+INSERT INTO `Language` (`id`,`name`) VALUES
+  (1,'English (UK)'),
+  (2,'English (US)'),
+  (3,'Spanish'),
+  (4,'French'),
+  (5,'Catalan'),
+  (6,'German'),
+  (7,'Italian'),
+  (8,'Portuguese'),
+  (9,'Dutch'),
+  (10,'Polish');
