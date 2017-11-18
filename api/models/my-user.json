@@ -21,7 +21,7 @@
   },
   "scope": {
       "include": [
-        "roles"
+        "roles", "mentorProfile"
       ]
   },
   "validations": [],
@@ -32,6 +32,11 @@
       "through": "RoleMapping",
       "keyThrough": "roleId",
       "foreignKey": "principalId"
+    },
+    "mentorProfile": {
+      "type": "hasOne",
+      "model": "MentorProfile",
+      "foreignKey": "userId"
     }
   },
   "acls": [

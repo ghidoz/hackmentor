@@ -100,10 +100,10 @@ for(let userId=apprentices.length + 1; userId < (apprentices.length + 1000); use
 
   user.mentorProfileId = mentorProfile.id;
 
-  let sql = `INSERT INTO \`MentorProfile\` (\`id\`, \`hoursPerWeek\`, \`pricePerHour\`, \`levelOfExperience\`, \`headline\`, \`description\`, \`createdAt\`, \`updatedAt\`) VALUES (${mentorProfile.id}, ${mentorProfile.hoursPerWeek}, ${mentorProfile.pricePerHour}, ${mentorProfile.levelOfExperience}, "${mentorProfile.headline}", "${mentorProfile.description}",  "${mentorProfile.createdAt}", "${mentorProfile.updatedAt}");`;
+  let sql = `INSERT INTO \`MentorProfile\` (\`id\`, \`userId\`, \`hoursPerWeek\`, \`pricePerHour\`, \`levelOfExperience\`, \`headline\`, \`description\`, \`createdAt\`, \`updatedAt\`) VALUES (${mentorProfile.id}, ${user.id}, ${mentorProfile.hoursPerWeek}, ${mentorProfile.pricePerHour}, ${mentorProfile.levelOfExperience}, "${mentorProfile.headline}", "${mentorProfile.description}",  "${mentorProfile.createdAt}", "${mentorProfile.updatedAt}");`;
   console.log(sql);
 
-  sql = `INSERT INTO \`MyUser\` (\`id\`, \`email\`, \`firstName\`, \`familyName\`, \`fbId\`) VALUES (${user.id}, "${user.email}", "${user.firstName}", "${user.familyName}", ${user.fbId} );`;
+  sql = `INSERT INTO \`MyUser\` (\`id\`, \`email\`, \`firstName\`, \`familyName\`, \`mentorProfileId\`, \`fbId\`) VALUES (${user.id}, "${user.email}", "${user.firstName}", "${user.familyName}", ${mentorProfile.id}, ${user.fbId} );`;
   console.log(sql);
 
   // languages

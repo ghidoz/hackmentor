@@ -57,6 +57,7 @@ ALTER TABLE `HeroSkill`
 
 CREATE TABLE `MentorProfile` (
   `id` INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `userId` INT(11) NOT NULL,
   `hoursPerWeek` INT(2) NOT NULL,
   `pricePerHour` INT(3) NOT NULL,
   `levelOfExperience` INT(1) NOT NULL,
