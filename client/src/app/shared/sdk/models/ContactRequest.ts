@@ -66,7 +66,8 @@ export class ContactRequest implements ContactRequestInterface {
         },
         "status": {
           name: 'status',
-          type: 'string'
+          type: 'string',
+          default: 'open'
         },
         "id": {
           name: 'id',
