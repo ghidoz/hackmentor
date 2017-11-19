@@ -8,13 +8,13 @@
     <span class="text">Find<br /> Mentor</span>
   </a>
 </div>
-<div>
+<div class="info">
   <h2>{{goal.headline}}</h2>
   <p class="description">{{goal.description}}</p>
   <div class="skills">
     <label>Skills</label>
     <span *ngFor="let skill of goal.skills | slice:0:6" class="badge badge-primary">
-      {{skill.skill.name}}
+      {{skill.name}}
     </span>
   </div>
   <div class="row">

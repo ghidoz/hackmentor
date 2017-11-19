@@ -2,6 +2,8 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { HeroCategoryApi } from '../../shared/sdk/services/custom/HeroCategory';
 import { HeroCategory } from '../../shared/sdk/models/HeroCategory';
 import { GoalApi } from '../../shared/sdk/services/custom/Goal';
+import { LoopBackAuth } from '../../shared/sdk/services/core/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'hm-new-goal',
@@ -13,7 +15,8 @@ export class NewGoalComponent implements OnInit {
 
   public step = 1;
   public goal: any = {
-    skills: []
+    skills: [],
+    status: 'open'
   };
   public heroCategories: HeroCategory[];
   public selectedHeroCategory: HeroCategory;
@@ -45,10 +48,13 @@ export class NewGoalComponent implements OnInit {
   }];
 
   constructor(private heroCategoryApi: HeroCategoryApi,
-              private goalApi: GoalApi) {
+              private goalApi: GoalApi,
+              private auth: LoopBackAuth,
+              private router: Router) {
   }
 
   ngOnInit() {
+    this.goal.apprenticeId = this.auth.getCurrentUserData().id;
     this.heroCategoryApi.find().subscribe((heroCategories: HeroCategory[]) => {
       this.heroCategories = heroCategories;
     });
@@ -68,7 +74,7 @@ export class NewGoalComponent implements OnInit {
 
   create() {
     this.goalApi.create(this.goal).subscribe(() => {
-      
+      this.router.navigate(['/mentors/list']);
     });
   }
 
