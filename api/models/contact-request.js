@@ -6,15 +6,16 @@ module.exports = (ContactRequest) => {
 
   ContactRequest.prototype.accept = accept;
 
-  ContactRequest.observe('before save', setSenderId);
+  ContactRequest.observe('before save', setFieldsOnCreate);
 };
 
-async function setSenderId(ctx) {
+async function setFieldsOnCreate(ctx) {
 
     const model = ctx.instance;
-    if(!model) return null;   // we only handle single model creates
+    if(!(model && ctx.isNewInstance)) return;   // we only handle single model creates
 
     model.senderId = ctx.options.accessToken.userId;
+    model.status = 'open';
 
 }
 
