@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MyUser } from '../../shared/sdk/models/MyUser';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ContactModalComponent } from './contact-modal/contact-modal.component';
@@ -16,6 +16,7 @@ export class MentorProfileComponent implements OnInit {
   public imageId = Math.random();
 
   constructor(private route: ActivatedRoute,
+              private router: Router,
               private modalService: NgbModal) { }
 
   ngOnInit() {
@@ -26,7 +27,7 @@ export class MentorProfileComponent implements OnInit {
     const modalRef: NgbModalRef = this.modalService.open(ContactModalComponent, {windowClass: 'contact'});
     modalRef.componentInstance.mentor = this.mentor;
     modalRef.result.then(() => {
-
+      this.router.navigate(['/requests']);
     }, () => {});
   }
 

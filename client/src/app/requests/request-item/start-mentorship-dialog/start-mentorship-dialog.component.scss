@@ -1,0 +1,31 @@
+@import '~styles/variables/variables';
+
+.modal-body {
+  padding: 40px;
+  text-align: center;
+  h1 {
+    font-size: 16px;
+    font-weight: $semi-bold;
+    color: $main-color;
+    margin-bottom:30px;
+  }
+  p {
+    font-size:  14px;
+    color: $grey;
+    margin-bottom: 30px;
+  }
+}
+
+.close {
+  color: #ffffff;
+}
+
+.modal-header {
+  background: $main-color url(/assets/images/start-success.svg) no-repeat center;
+}
+
+.user-picture {
+  margin-right:10px;
+}
+
+

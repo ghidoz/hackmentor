@@ -10,6 +10,7 @@ import { MentorsModule } from './mentors/mentors.module';
 import { HttpClientModule } from '@angular/common/http';
 import { LayoutModule } from './layout/layout.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { RequestsModule } from './requests/requests.module';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CoreModule.forRoot(),
     HomeModule,
     MentorsModule,
+    RequestsModule,
     SDKBrowserModule.forRoot(),
     FacebookModule.forRoot(),
     HttpClientModule,

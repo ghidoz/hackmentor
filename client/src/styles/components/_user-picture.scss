@@ -1,5 +1,9 @@
 .user-picture {
   border-radius: 50%;
+  &.supersmall {
+    width: 36px;
+    height: 36px;
+  }
   &.small {
     width: 60px;
     height: 60px;
