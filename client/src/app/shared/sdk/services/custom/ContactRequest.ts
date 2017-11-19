@@ -38,7 +38,7 @@ export class ContactRequestApi extends BaseLoopBackApi {
    *
    * @param {any} id ContactRequest id
    *
-   * @param {boolean} refresh
+   * @param {boolean} refresh 
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -68,7 +68,7 @@ export class ContactRequestApi extends BaseLoopBackApi {
    *
    * @param {any} id ContactRequest id
    *
-   * @param {boolean} refresh
+   * @param {boolean} refresh 
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -98,7 +98,7 @@ export class ContactRequestApi extends BaseLoopBackApi {
    *
    * @param {any} id ContactRequest id
    *
-   * @param {boolean} refresh
+   * @param {boolean} refresh 
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -190,10 +190,6 @@ export class ContactRequestApi extends BaseLoopBackApi {
    *
    * @param {any} id ContactRequest id
    *
-   * @param {object} data Request data.
-   *
-   * This method does not accept any data. Supply an empty object.
-   *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
@@ -204,12 +200,37 @@ export class ContactRequestApi extends BaseLoopBackApi {
    * </em>
    */
   public accept(id: any, customHeaders?: Function): Observable<any> {
-    let _method: string = "POST";
+    let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/ContactRequests/:id/accept";
     let _routeParams: any = {
       id: id
     };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Returns only my contact requests
+   *
+   * @param {object} options 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ContactRequest` object.)
+   * </em>
+   */
+  public myContactRequests(customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ContactRequests/myContactRequests";
+    let _routeParams: any = {};
     let _postBody: any = {};
     let _urlParams: any = {};
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
