@@ -9,7 +9,7 @@ export const environment = {
     baseUrl: '//localhost:3000'
   },
   facebook: {
-    appId: '389552154797907',
+    appId: '1076096819194125',
     xfbml: true,
     version: 'v2.8'
   }

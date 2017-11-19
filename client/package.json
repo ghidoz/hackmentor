@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --disable-host-check",
-    "build": "ng build",
+    "build": "ng build --aot=false --output-hashing=all --sourcemaps=false --extract-css=true --named-chunks=false",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
