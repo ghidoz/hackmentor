@@ -18,7 +18,7 @@ export class RequestsComponent implements OnInit {
 
   ngOnInit() {
     this.contactRequestApi.myContactRequests().subscribe((contactRequests: ContactRequest[]) => {
-      this.requests = contactRequests;
+      this.requests = contactRequests.filter(request => request.status !== 'accepted').reverse();
     });
   }
 

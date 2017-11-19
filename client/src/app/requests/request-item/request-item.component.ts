@@ -4,6 +4,8 @@ import { MyUser } from '../../shared/sdk/models/MyUser';
 import { LoopBackAuth } from '../../shared/sdk/services/core/auth.service';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { StartMentorshipDialogComponent } from './start-mentorship-dialog/start-mentorship-dialog.component';
+import { ContactRequestApi } from '../../shared/sdk/services/custom/ContactRequest';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'hm-request-item',
@@ -19,7 +21,10 @@ export class RequestItemComponent implements OnInit {
   public picture: string;
 
   constructor(private auth: LoopBackAuth,
-              private modalService: NgbModal) { }
+              private modalService: NgbModal,
+              private contactRequestApi: ContactRequestApi,
+              private router: Router) {
+  }
 
   ngOnInit() {
     const currentUserId = this.auth.getCurrentUserData().id;
@@ -32,8 +37,11 @@ export class RequestItemComponent implements OnInit {
     const modalRef: NgbModalRef = this.modalService.open(StartMentorshipDialogComponent, {windowClass: 'contact'});
     modalRef.componentInstance.mentor = this.user;
     modalRef.result.then(() => {
-
-    }, () => {});
+      this.contactRequestApi.accept(this.request.id).subscribe(() => {
+        this.router.navigate(['/goals']);
+      });
+    }, () => {
+    });
   }
 
 }

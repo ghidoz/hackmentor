@@ -23,7 +23,7 @@ async function setFieldsOnCreate(ctx) {
 async function accept(options) {
 
     // update the goal
-    const goal = await this.goal(options);
+    const goal = await this.goal();
 
     goal.status = 'assigned';
     goal.mentorId = this.recipientId;

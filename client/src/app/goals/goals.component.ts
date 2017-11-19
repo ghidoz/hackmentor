@@ -16,7 +16,7 @@ export class GoalsComponent implements OnInit {
 
   ngOnInit() {
     this.goalApi.myGoals().subscribe((goals: Goal[]) => {
-      this.goals = goals;
+      this.goals = goals.reverse();
     });
   }
 
