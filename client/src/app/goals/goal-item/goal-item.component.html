@@ -2,6 +2,7 @@
   <a *ngIf="goal.mentor" [routerLink]="['/mentors/' + goal.mentor.id]" class="mentor">
     <img [src]="picture" class="user-picture small" />
     <span class="text">{{goal.mentor.firstName + ' ' + goal.mentor.familyName}}</span>
+    <a href="https://m.me/cover" target="_blank" class="btn btn-message"></a>
   </a>
   <a *ngIf="!goal.mentor" [routerLink]="['/mentors/list']" class="mentor find-mentor">
     <div class="icon"><mat-icon svgIcon="mentors"></mat-icon></div>

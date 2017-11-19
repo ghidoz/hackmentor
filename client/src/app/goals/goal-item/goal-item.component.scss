@@ -38,6 +38,7 @@ label {
     text-align: center;
     margin-top: 10px;
     margin-right: 20px;
+    width: 60px;
   }
 }
 
@@ -66,4 +67,14 @@ label {
 
 .info {
   flex-basis: 100%;
+}
+
+.btn-message {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  background-position: center;
+  margin-left: 17px;
+  margin-top: 10px;
 }
