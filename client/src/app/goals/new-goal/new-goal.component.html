@@ -1,12 +1,12 @@
 <div class="wrapper">
   <button type="button" class="close" [routerLink]="['/goals']">&times;</button>
-  <div class="content centered step-0" [hidden]="step !== 0">
+  <div class="content centered step-0 animated fadeIn" [hidden]="step !== 0">
     <h1>Set up your first Goal</h1>
     <p>Tell us what you are looking to learn with the help of a Mentor<br/>
       then we can find someone who is right for the job.</p>
     <button class="btn btn-light" (click)="nextStep()">Get started</button>
   </div>
-  <div class="content centered step-1" [hidden]="step !== 1">
+  <div class="content centered step-1 animated fadeIn" [hidden]="step !== 1">
     <h1 class="question">What do you want lo learn?</h1>
       <div ngbRadioGroup name="heroCategory" [(ngModel)]="selectedHeroCategory">
         <label ngbButtonLabel class="option radio-option" *ngFor="let category of heroCategories">
@@ -16,7 +16,7 @@
       </div>
     <button class="btn btn-light btn-next" (click)="nextStep()" [disabled]="!selectedHeroCategory">Next question</button>
   </div>
-  <div class="content centered step-2" [hidden]="step !== 2">
+  <div class="content centered step-2 animated fadeIn" [hidden]="step !== 2">
     <h1 class="question">What {{selectedHeroCategory?.name}} would you like to learn?</h1>
     <div class="scroll">
       <div name="skills" data-toggle="buttons">
@@ -28,7 +28,7 @@
     </div>
     <button class="btn btn-light btn-next" (click)="nextStep()" [disabled]="!goal.skills.length">Next question</button>
   </div>
-  <div class="content centered step-3" [hidden]="step !== 3">
+  <div class="content centered step-3 animated fadeIn" [hidden]="step !== 3">
     <div class="form-group">
       <label for="hoursPerWeek" class="label">How many hours per week can you commit to?</label>
       <select class="form-control" id="hoursPerWeek" name="hoursPerWeek" [(ngModel)]="goal.hoursPerWeek" placeholder="Select a range">
@@ -43,7 +43,7 @@
     </div>
     <button class="btn btn-light btn-next" (click)="nextStep()" [disabled]="!goal.weeklyBudget || !goal.hoursPerWeek">Next question</button>
   </div>
-  <div class="content centered step-4" [hidden]="step !== 4">
+  <div class="content centered step-4 animated fadeIn" [hidden]="step !== 4">
     <div class="form-group">
       <label for="headline" class="label">Add a quick summary...</label>
       <input class="form-control" id="headline" name="headline" [(ngModel)]="goal.headline" placeholder="This will be the title of your goal" />
