@@ -31,6 +31,7 @@
     }
   },
   "scope": {
+    "include": ["apprentice", "mentor", "skills"]
   },
   "validations": [],
   "relations": {
@@ -47,6 +48,15 @@
     "contactRequest": {
       "type": "hasMany",
       "model": "ContactRequest"
+    },
+    "goalSkills": {
+      "type": "hasMany",
+      "model": "GoalSkill"
+    },
+    "skills": {
+      "type": "hasMany",
+      "model": "Skill",
+      "through": "GoalSkill"
     }
   },
   "acls": [
