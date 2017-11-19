@@ -95,7 +95,7 @@ function authenticate(MyUser) {
 function getProfile(accessToken) {
 
   return new Promise((resolve, reject) => {
-    graph.get(`/me?access_token=${accessToken}&fields=id,first_name,last_name,picture.type(large),email,location,timezone`, (err, result) => {
+    graph.get(`/me?access_token=${accessToken}&fields=id,first_name,last_name,picture.type(large),email,timezone`, (err, result) => {
       if (err) return reject(err);
       resolve(result);
     });
