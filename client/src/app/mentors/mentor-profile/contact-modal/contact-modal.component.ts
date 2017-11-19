@@ -24,7 +24,7 @@ export class ContactModalComponent implements OnInit {
   ngOnInit() {
 
     this.goalApi.myGoals().subscribe((goals: Goal[]) => {
-      this.goals = goals;
+      this.goals = goals.reverse();
       if (this.goals.length) {
         this.request.goalId = this.goals[0].id;
       }
