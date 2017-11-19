@@ -7,6 +7,7 @@ import { MentorResolverService } from './mentor-profile/mentor-resolver.service'
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { ContactModalComponent } from './mentor-profile/contact-modal/contact-modal.component';
 import { FormsModule } from '@angular/forms';
+import {InfiniteScrollModule} from 'ngx-infinite-scroll';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { FormsModule } from '@angular/forms';
     MentorsRoutingModule,
     LayoutModule,
     NgbModalModule,
-    FormsModule
+    FormsModule,
+    InfiniteScrollModule,
   ],
   declarations: [
     mentorsRoutedComponents,
