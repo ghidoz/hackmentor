@@ -15,13 +15,24 @@
       </div>
     </div>
     <div class="col-9">
-      <div class="mentors-list box">
+
+      <div class="mentors-list box"
+           infiniteScroll
+           [infiniteScrollDistance]="5"
+           [infiniteScrollThrottle]="100"
+           (scrolled)="onScroll()">
+
         <div class="box-header">
           <div class="float-left"><b>234</b> Mentors match your needs</div>
           <div class="float-right filter">
             <a href="">Filter</a></div>
         </div>
-        <hm-mentor-item class="box-item" *ngFor="let mentor of mentors" [mentor]="mentor"></hm-mentor-item>
+
+        <hm-mentor-item class="box-item"
+                        *ngFor="let mentor of mentors"
+                        [mentor]="mentor">
+        </hm-mentor-item>
+
       </div>
     </div>
   </div>
