@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
 
   fbLogin(): void {
     this.fb.login({
-      scope: 'email,user_location'
+      scope: 'email'
     })
       .then((response: LoginResponse) => {
         this.myUser.fbAuthentication(response.authResponse.accessToken).subscribe((accessToken: SDKToken) => {
