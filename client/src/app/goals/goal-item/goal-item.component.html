@@ -13,7 +13,7 @@
   <p class="description">{{goal.description}}</p>
   <div class="skills">
     <label>Skills</label>
-    <span *ngFor="let skill of mentor.mentorProfile.skills | slice:0:6" class="badge badge-primary">
+    <span *ngFor="let skill of goal.skills | slice:0:6" class="badge badge-primary">
       {{skill.skill.name}}
     </span>
   </div>
