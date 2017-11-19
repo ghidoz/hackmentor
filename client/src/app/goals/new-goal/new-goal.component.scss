@@ -92,8 +92,12 @@ p {
     }
     .checkbox-icon {
       background-color: $main-color;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       mat-icon {
         display: inline-block;
+        width: 14px;
       }
     }
   }
