@@ -14,7 +14,7 @@
 <div class="actions">
   <a href="" class="cancel" [hidden]="!sent">CANCEL REQUEST</a>
   <div [hidden]="sent">
-    <a href="" class="btn btn-outline-primary btn-start">START MENTORSHIP</a>
+    <a (click)="startMentorship()" class="btn btn-outline-primary btn-start">START MENTORSHIP</a>
     <a href="" class="cancel">DECLINE</a>
   </div>
 </div>

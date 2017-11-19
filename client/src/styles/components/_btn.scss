@@ -13,7 +13,10 @@
     }
   }
   &.btn-primary {
-    background-color: $main-color-dark;
+    background-color: $main-color;
+    &:hover {
+      background: $main-color-dark;
+    }
   }
   &.btn-message {
     background: $fb-color url(/assets/icons/icn-message.svg) no-repeat 12px center;
@@ -30,5 +33,9 @@
     font-size: 14px;
     font-weight: $bold;
     padding: 0.67rem 1.1rem;
+    color: $main-color !important;
+    &:hover {
+      color: white !important;
+    }
   }
 }
