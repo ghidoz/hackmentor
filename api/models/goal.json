@@ -31,6 +31,7 @@
     }
   },
   "scope": {
+    "include": ["apprentice", "mentor", "skills"]
   },
   "validations": [],
   "relations": {
@@ -43,6 +44,15 @@
       "type": "belongsTo",
       "model": "MyUser",
       "foreignKey": "mentorId"
+    },
+    "goalSkills": {
+      "type": "hasMany",
+      "model": "GoalSkill"
+    },
+    "skills": {
+      "type": "hasMany",
+      "model": "Skill",
+      "through": "GoalSkill"
     }
   },
   "acls": [
