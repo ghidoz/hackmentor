@@ -43,6 +43,10 @@
       "type": "belongsTo",
       "model": "MyUser",
       "foreignKey": "mentorId"
+    },
+    "contactRequest": {
+      "type": "hasMany",
+      "model": "ContactRequest"
     }
   },
   "acls": [
@@ -58,5 +62,14 @@
       "permission": "ALLOW"
     }
   ],
-  "methods": {}
+  "methods": {
+    "myGoals": {
+      "accepts": [
+        { "arg": "options", "type": "object", "http": "optionsFromRequest" }
+      ],
+      "description": "Returns only my goals",
+      "returns": { "root": true, "type": "Goal[]" },
+      "http": { "arg": "get", "path": "/myGoals" }
+    }
+  }
 }

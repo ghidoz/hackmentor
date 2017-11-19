@@ -1,6 +1,7 @@
 /* tslint:disable */
 import {
-  MyUser
+  MyUser,
+  ContactRequest
 } from '../index';
 
 declare var Object: any;
@@ -15,6 +16,7 @@ export interface GoalInterface {
   "mentorId"?: number;
   apprentice?: MyUser;
   mentor?: MyUser;
+  contactRequest?: ContactRequest[];
 }
 
 export class Goal implements GoalInterface {
@@ -28,6 +30,7 @@ export class Goal implements GoalInterface {
   "mentorId": number;
   apprentice: MyUser;
   mentor: MyUser;
+  contactRequest: ContactRequest[];
   constructor(data?: GoalInterface) {
     Object.assign(this, data);
   }
@@ -110,6 +113,14 @@ export class Goal implements GoalInterface {
           relationType: 'belongsTo',
                   keyFrom: 'mentorId',
           keyTo: 'id'
+        },
+        contactRequest: {
+          name: 'contactRequest',
+          type: 'ContactRequest[]',
+          model: 'ContactRequest',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'goalId'
         },
       }
     }
