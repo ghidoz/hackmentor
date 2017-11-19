@@ -38,7 +38,7 @@ export class ContactRequestApi extends BaseLoopBackApi {
    *
    * @param {any} id ContactRequest id
    *
-   * @param {boolean} refresh 
+   * @param {boolean} refresh
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -68,7 +68,7 @@ export class ContactRequestApi extends BaseLoopBackApi {
    *
    * @param {any} id ContactRequest id
    *
-   * @param {boolean} refresh 
+   * @param {boolean} refresh
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -98,7 +98,7 @@ export class ContactRequestApi extends BaseLoopBackApi {
    *
    * @param {any} id ContactRequest id
    *
-   * @param {boolean} refresh 
+   * @param {boolean} refresh
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned

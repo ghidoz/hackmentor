@@ -4,6 +4,7 @@ module.exports = (ContactRequest) => {
 
   ContactRequest.validatesInclusionOf('status', { in: ['open', 'accepted', 'declined']});
 
+<<<<<<< Updated upstream
   ContactRequest.prototype.accept = accept;
 
   ContactRequest.observe('before save', setFieldsOnCreate);
@@ -33,5 +34,18 @@ async function accept(options) {
     this.status = 'accepted';
 
     return this.save(options);
+=======
+  ContactRequest.myContactRequests = myContactRequests(ContactRequest);
+};
+
+function myContactRequests(ContactRequest) {
+
+ return async (options) => {
+
+   const userId = options.accessToken.userId;
+
+   return ContactRequest.find({ where: { apprenticeId: userId }});
+ }
+>>>>>>> Stashed changes
 
 }

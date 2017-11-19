@@ -58,7 +58,14 @@
       ],
       "description": "Accepts a contact request",
       "returns": { "root": true, "type": "ContactRequest" },
-      "http": { "arg": "get", "path": "/accept" }
+      "http": { "verb": "get", "path": "/accept" },
+    "myContactRequests": {
+      "accepts": [
+        { "arg": "options", "type": "object", "http": "optionsFromRequest" }
+      ],
+      "description": "Returns only my contact requests",
+      "returns": { "root": true, "type": "ContactRequest[]" },
+      "http": { "verb": "get", "path": "/myContactRequests" }
     }
   }
 }
