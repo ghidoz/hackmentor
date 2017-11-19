@@ -21,7 +21,6 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.user = this.auth.getCurrentUserData();
   }
 
   fbLogin(): void {
@@ -32,7 +31,6 @@ export class HomeComponent implements OnInit {
         this.myUser.fbAuthentication(response.authResponse.accessToken).subscribe((accessToken: SDKToken) => {
           accessToken.rememberMe = true;
           this.auth.setToken(accessToken);
-          this.user = accessToken.user;
           this.router.navigate(['goals/new']);
         });
       })
