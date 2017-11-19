@@ -2,8 +2,9 @@
 
 INSERT INTO `HeroCategory` (`id`, `name`) VALUES
   (1, 'Programming Languages'),
-  (2, 'Web Frameworks'),
-  (3, 'Storage Technologies');
+  (2, 'Web Development'),
+  (3, 'Databases'),
+  (4, 'Mobile App Development');
 
 INSERT INTO `Skill` (`id`, `name`) VALUES
   (1, 'Angular1'),
@@ -24,7 +25,10 @@ INSERT INTO `Skill` (`id`, `name`) VALUES
   (16, 'C#'),
   (17, 'C++'),
   (18, 'Rust'),
-  (19, 'Kotlin');
+  (19, 'Kotlin'),
+  (20, 'iOS'),
+  (21, 'Android'),
+  (22, 'Windows Phone');
 
 INSERT INTO `HeroSkill` (heroCategoryId, `skillId`) VALUES
   (1, 13),
@@ -43,7 +47,10 @@ INSERT INTO `HeroSkill` (heroCategoryId, `skillId`) VALUES
   (2, 7),
   (3, 8),
   (3, 9),
-  (3, 10);
+  (3, 10),
+  (4, 20),
+  (4, 21),
+  (4, 22);
 
 INSERT INTO `Language` (`id`,`name`) VALUES
   (1,'English (UK)'),
