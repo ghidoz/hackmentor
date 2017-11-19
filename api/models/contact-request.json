@@ -14,7 +14,8 @@
     },
     "status": {
       "type": "string",
-      "required": true
+      "required": true,
+      "default": "open"
     }
   },
   "scope": {
@@ -50,5 +51,14 @@
       "permission": "ALLOW"
     }
   ],
-  "methods": {}
+  "methods": {
+    "prototype.accept": {
+      "accepts": [
+        { "arg": "options", "type": "object", "http": "optionsFromRequest" }
+      ],
+      "description": "Accepts a contact request",
+      "returns": { "root": true, "type": "ContactRequest" },
+      "http": { "arg": "get", "path": "/accept" }
+    }
+  }
 }
