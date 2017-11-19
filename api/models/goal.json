@@ -78,7 +78,7 @@
         { "arg": "options", "type": "object", "http": "optionsFromRequest" }
       ],
       "description": "Returns only my goals",
-      "returns": { "root": true, "type": "Goal[]" },
+      "returns": { "root": true, "type": "[Goal]" },
       "http": { "arg": "get", "path": "/myGoals" }
     }
   }

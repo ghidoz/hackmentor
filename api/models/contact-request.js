@@ -5,6 +5,7 @@ module.exports = (ContactRequest) => {
   ContactRequest.validatesInclusionOf('status', { in: ['open', 'accepted', 'declined']});
 
   ContactRequest.prototype.accept = accept;
+  ContactRequest.myContactRequests = myContactRequests(ContactRequest);
 
   ContactRequest.observe('before save', setFieldsOnCreate);
 };
@@ -33,5 +34,16 @@ async function accept(options) {
     this.status = 'accepted';
 
     return this.save(options);
+
+}
+
+function myContactRequests(ContactRequest) {
+
+ return async (options) => {
+
+   const userId = options.accessToken.userId;
+
+   return ContactRequest.find({ where: { apprenticeId: userId, mentorId: userId }});
+ }
 
 }

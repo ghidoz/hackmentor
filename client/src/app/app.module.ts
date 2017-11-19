@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LayoutModule } from './layout/layout.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RequestsModule } from './requests/requests.module';
+import {HttpModule} from './shared/http/http.module';
 import { GoalsModule } from './goals/goals.module';
 
 
@@ -29,6 +30,7 @@ import { GoalsModule } from './goals/goals.module';
     SDKBrowserModule.forRoot(),
     FacebookModule.forRoot(),
     HttpClientModule,
+    HttpModule,
     LayoutModule,
     NgbModule.forRoot()
   ],

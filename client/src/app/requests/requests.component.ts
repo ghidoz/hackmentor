@@ -13,19 +13,12 @@ export class RequestsComponent implements OnInit {
 
   public requests: ContactRequest[];
 
-  constructor(private contactRequestApi: ContactRequestApi,
-              private auth: LoopBackAuth) {
+  constructor(private contactRequestApi: ContactRequestApi) {
   }
 
   ngOnInit() {
-    const userId = this.auth.getCurrentUserData().id;
-    const filter = {
-      where: {
-        or: [{senderId: userId}, {recipientId: userId}]
-      }
-    };
-    this.contactRequestApi.find(filter).subscribe((requests: ContactRequest[]) => {
-      this.requests = requests;
+    this.contactRequestApi.myContactRequests().subscribe((contactRequests: ContactRequest[]) => {
+      this.requests = contactRequests;
     });
   }
 
