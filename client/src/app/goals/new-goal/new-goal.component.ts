@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 })
 export class NewGoalComponent implements OnInit {
 
-  public step = 1;
+  public step = 0;
   public goal: any = {
     skills: [],
     status: 'open'
