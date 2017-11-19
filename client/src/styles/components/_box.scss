@@ -9,4 +9,22 @@
     border-bottom: 1px solid $border-color;
     overflow: hidden;
   }
+  .nav {
+    margin-top: -20px;
+    margin-bottom: -20px;
+    margin-left: -20px;
+    li {
+      a {
+        font-size: 14px;
+        font-weight: $bold;
+        border-right: 1px solid $border-color;
+        height: 100%;
+        padding: 20px;
+        &.active {
+          color: $main-color;
+          border-bottom: 3px solid $main-color;
+        }
+      }
+    }
+  }
 }

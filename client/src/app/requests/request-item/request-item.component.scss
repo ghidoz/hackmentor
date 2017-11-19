@@ -1,0 +1,60 @@
+@import '~styles/variables/variables';
+
+:host {
+  display: flex;
+  font-size: 14px;
+}
+
+.user-picture {
+  margin-right: 14px;
+  flex-shrink: 0;
+}
+
+.sent-received {
+  font-size: 12px;
+  font-weight: $bold;
+  color: $grey;
+  text-align: center;
+  margin-right: 14px;
+  margin-top: 8px;
+}
+
+h2 {
+  font-size: 16px;
+  font-weight: $semi-bold;
+  a {
+    color: $black;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.headline {
+  line-height: 1.43;
+}
+
+.info {
+  flex-basis: 100%;
+}
+
+.btn-message {
+  margin-bottom: 10px;
+}
+
+.actions {
+  flex-basis: 200px;
+  text-align: right;
+  align-self: center;
+  .cancel {
+    font-weight: $semi-bold;
+    color: $grey;
+    &:hover {
+      color: $red;
+      text-decoration: none;
+    }
+  }
+  .btn-start {
+    margin-bottom: 15px;
+  }
+}
