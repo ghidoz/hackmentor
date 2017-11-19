@@ -18,6 +18,7 @@ export class ContactModalComponent implements OnInit {
   public request: any = {};
   public goals: Goal[];
   public contacted: boolean;
+  public currentUserId: string;
 
   constructor(public activeModal: NgbActiveModal,
               private goalApi: GoalApi,
@@ -26,20 +27,23 @@ export class ContactModalComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.currentUserId = this.auth.getCurrentUserData().id;
     const filter = {
       where: {
-        apprenticeId: this.mentor.id
+        apprenticeId: this.currentUserId
       }
     };
     this.goalApi.find(filter).subscribe((goals: Goal[]) => {
       this.goals = goals;
-      this.request.goalId = this.goals[0].id;
+      if (this.goals.length) {
+        this.request.goalId = this.goals[0].id;
+      }
     });
   }
 
   public send() {
     const params = Object.assign(this.request, {
-      senderId: this.auth.getCurrentUserData().id,
+      senderId: this.currentUserId,
       recipientId: this.mentor.id,
       status: 'open'
     });
