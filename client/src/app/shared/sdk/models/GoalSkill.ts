@@ -62,7 +62,8 @@ export class GoalSkill implements GoalSkillInterface {
         },
         "level": {
           name: 'level',
-          type: 'string'
+          type: 'string',
+          default: '1'
         },
       },
       relations: {

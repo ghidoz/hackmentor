@@ -6,4 +6,5 @@ export function configIcons(matIconRegistry: MatIconRegistry, sanitizer: DomSani
   matIconRegistry.addSvgIcon('mentors', sanitizer.bypassSecurityTrustResourceUrl('/assets/icons/icn-mentors.svg'));
   matIconRegistry.addSvgIcon('requests', sanitizer.bypassSecurityTrustResourceUrl('/assets/icons/icn-requests.svg'));
   matIconRegistry.addSvgIcon('reviews', sanitizer.bypassSecurityTrustResourceUrl('/assets/icons/icn-reviews.svg'));
+  matIconRegistry.addSvgIcon('check', sanitizer.bypassSecurityTrustResourceUrl('/assets/icons/icn-check.svg'));
 }

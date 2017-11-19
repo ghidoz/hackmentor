@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit {
           accessToken.rememberMe = true;
           this.auth.setToken(accessToken);
           this.user = accessToken.user;
-          this.router.navigate(['mentors/list']);
+          this.router.navigate(['goals/new']);
         });
       })
       .catch((error: any) => console.error(error));
