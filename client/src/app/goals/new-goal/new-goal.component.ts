@@ -74,7 +74,7 @@ export class NewGoalComponent implements OnInit {
 
   create() {
     this.goalApi.create(this.goal).subscribe(() => {
-      this.router.navigate(['/mentors/list']);
+      this.router.navigate(['/goals']);
     });
   }
 
