@@ -4,28 +4,21 @@ module.exports = (ContactRequest) => {
 
   ContactRequest.validatesInclusionOf('status', { in: ['open', 'accepted', 'declined']});
 
-  ContactRequest.prototype.accept = accept(ContactRequest);
+  ContactRequest.prototype.accept = accept;
 
-  ContactRequest.observe('before save', setSenderId(ContactRequest));
+  ContactRequest.observe('before save', setSenderId);
 };
 
-function setSenderId(ContactRequest) {
-
-  return async (ctx) => {
-
-    console.log('set sender id called', ctx.options.accessToken, ctx.model);
+async function setSenderId(ctx) {
 
     const model = ctx.instance;
     if(!model) return null;   // we only handle single model creates
 
     model.senderId = ctx.options.accessToken.userId;
-  }
 
 }
 
-function accept(ContactRequest) {
-
-  return async (options) => {
+async function accept(options) {
 
     // update the goal
     const goal = await this.goal(options);
@@ -39,6 +32,5 @@ function accept(ContactRequest) {
     this.status = 'accepted';
 
     return this.save(options);
-  }
 
 }
