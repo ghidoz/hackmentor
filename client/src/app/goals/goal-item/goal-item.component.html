@@ -1,3 +1,30 @@
-<p>
-  goal-item works!
-</p>
+<div>
+  <a *ngIf="goal.mentor" [routerLink]="['/mentors/' + goal.mentor.id]" class="mentor">
+    <img [src]="picture" class="user-picture small" />
+    <span class="text">{{goal.mentor.firstName + ' ' + goal.mentor.familyName}}</span>
+  </a>
+  <a *ngIf="!goal.mentor" [routerLink]="['/mentors/list']" class="mentor find-mentor">
+    <div class="icon"><mat-icon svgIcon="mentors"></mat-icon></div>
+    <span class="text">Find<br /> Mentor</span>
+  </a>
+</div>
+<div>
+  <h2>{{goal.headline}}</h2>
+  <p class="description">{{goal.description}}</p>
+  <div class="skills">
+    <label>Skills</label>
+    <span *ngFor="let skill of mentor.mentorProfile.skills | slice:0:6" class="badge badge-primary">
+      {{skill.skill.name}}
+    </span>
+  </div>
+  <div class="row">
+    <div class="col-3">
+      <label>Commitment</label>
+      {{goal.hoursPerWeek}}h / week
+    </div>
+    <div class="col-3">
+      <label>Budget</label>
+      {{goal.weeklyBudget | currency}} / week
+    </div>
+  </div>
+</div>

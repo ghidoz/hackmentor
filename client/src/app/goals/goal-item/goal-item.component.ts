@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Goal } from '../../shared/sdk/models/Goal';
 
 @Component({
   selector: 'hm-goal-item',
@@ -8,9 +9,13 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class GoalItemComponent implements OnInit {
 
+  @Input() goal: Goal;
+  public picture: string;
+
   constructor() { }
 
   ngOnInit() {
+    this.picture = 'https://placeimg.com/60/60/people?' + Math.random()
   }
 
 }
