@@ -18,10 +18,5 @@
       "limit": "100kb"
     },
     "cors": false
-  },
-  "cloudinaryConfig": {
-    "cloud_name": "blue-rose-dev",
-    "api_key": "512395834151194",
-    "api_secret": "XCvUC2bvbFCo8s3vkR2JiF756rI"
   }
 }
