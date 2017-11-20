@@ -1,0 +1,87 @@
+{
+  "_meta": {
+    "sources": [
+      "./models"
+    ],
+    "mixins": [
+      "./mixins"
+    ]
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false,
+    "relations": {
+      "user": {
+        "type": "belongsTo",
+        "model": "MyUser",
+        "foreignKey": "userId"
+      },
+      "roles": {
+        "type": "hasMany",
+        "model": "Role",
+        "through": "RoleMapping",
+        "keyThrough": "principalId",
+        "foreignKey": "userId"
+      }
+    }
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": true
+  },
+  "MyUser": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Goal": {
+    "dataSource": "db",
+    "public": true
+  },
+  "GoalSkill": {
+    "dataSource": "db",
+    "public": true
+  },
+  "HeroCategory": {
+    "dataSource": "db",
+    "public": true
+  },
+  "HeroSkill": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Language": {
+    "dataSource": "db",
+    "public": true
+  },
+  "MentorProfile": {
+    "dataSource": "db",
+    "public": true
+  },
+  "MentorSkill": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Skill": {
+    "dataSource": "db",
+    "public": true
+  },
+  "UserLanguage": {
+    "dataSource": "db",
+    "public": true
+  },
+  "ContactRequest": {
+    "dataSource": "db",
+    "public": true
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "name": "ContactRequest",
+  "idInjection": true,
+  "mixins": {
+    "EnhancedContext": {}
+  },
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "message": {
+      "type": "string",
+      "required": true
+    },
+    "status": {
+      "type": "string",
+      "required": true,
+      "default": "open"
+    }
+  },
+  "scope": {
+    "include": ["goal", "sender", "recipient"]
+  },
+  "validations": [],
+  "relations": {
+    "goal": {
+      "type": "belongsTo",
+      "model": "Goal"
+    },
+    "sender": {
+      "type": "belongsTo",
+      "model": "MyUser",
+      "foreignKey": "senderId"
+    },
+    "recipient": {
+      "type": "belongsTo",
+      "model": "MyUser",
+      "foreignKey": "recipientId"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {
+    "prototype.accept": {
+      "accepts": [
+        {
+          "arg": "options",
+          "type": "object",
+          "http": "optionsFromRequest"
+        }
+      ],
+      "description": "Accepts a contact request",
+      "returns": {
+        "root": true,
+        "type": "ContactRequest"
+      },
+      "http": {
+        "verb": "get",
+        "path": "/accept"
+      }
+    },
+    "myContactRequests": {
+      "accepts": [
+        { "arg": "options", "type": "object", "http": "optionsFromRequest" }
+      ],
+      "description": "Returns only my contact requests",
+      "returns": { "root": true, "type": "[ContactRequest]" },
+      "http": { "verb": "get", "path": "/myContactRequests" }
+    }
+  }
+}

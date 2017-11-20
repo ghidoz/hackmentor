@@ -1,0 +1,61 @@
+{
+  "name": "MentorProfile",
+  "idInjection": true,
+  "mixins": {
+    "EnhancedContext": {}
+  },
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "hoursPerWeek": {
+      "type": "number",
+      "required": true
+    },
+    "pricePerHour": {
+      "type": "number",
+      "required": true
+    },
+    "levelOfExperience": {
+      "type": "number",
+      "required": true
+    },
+    "headline": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "scope": {
+    "include": "skills"
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "MyUser",
+      "foreignKey": "userId"
+    },
+    "skills": {
+      "type": "hasMany",
+      "model": "MentorSkill"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

@@ -1,0 +1,13 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close" (click)="activeModal.dismiss()">&times;</button>
+  </div>
+  <div class="modal-body">
+    <h1>
+      <img src="https://placeimg.com/60/60/people" class="user-picture supersmall" />
+      You are going to start a mentorship with {{mentor.firstName}}</h1>
+    <p>Your new mentor will guide you to reach your goal.<br />
+      You will be able to schedule sessions through Facebook Messenger.</p>
+    <button class="btn btn-primary" (click)="activeModal.close()">Let's do this!</button>
+  </div>
+</div>

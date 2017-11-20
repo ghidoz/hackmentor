@@ -1,0 +1,7 @@
+{
+  "development": {
+    "url": { "ENV": "DATABASE_URL" },
+    "multipleStatements": true
+  },
+  "sql-file" : true
+}

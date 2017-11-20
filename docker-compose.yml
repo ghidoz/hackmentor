@@ -1,0 +1,52 @@
+version: '3'
+
+services:
+
+  db:
+    image: mysql:8
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: hackmentors
+      MYSQL_DATABASE: hackmentors
+      MYSQL_USER: hackmentors
+      MYSQL_PASSWORD: hackmentors
+
+  adminer:
+    depends_on:
+    - db
+    image: clue/adminer
+    ports:
+    - 8080:80
+
+  client:
+    user: node
+    build: ./client
+    working_dir: /usr/client
+    depends_on:
+    - db
+    - adminer
+    - api
+    ports:
+    - 4200:4200
+    volumes:
+    - ./client:/usr/client:consistent
+    - ./api:/usr/api:consistent
+    entrypoint: sh -c "yarn install && yarn start"
+
+  api:
+    user: node
+    build: ./api
+    working_dir: /usr/api
+    depends_on:
+    - db
+    - adminer
+    ports:
+    - "3000:3000"
+    volumes:
+    - ./api:/usr/api:consistent
+    - ./client:/usr/client:consistent
+    entrypoint: sh -c "yarn install && yarn start"
+    environment:
+      DATABASE_URL: mysql://hackmentors:hackmentors@db/hackmentors
+

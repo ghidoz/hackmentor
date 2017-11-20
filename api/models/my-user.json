@@ -1,0 +1,82 @@
+{
+  "name": "MyUser",
+  "base": "User",
+  "idInjection": true,
+  "mixins": {
+    "EnhancedContext": {}
+  },
+  "options": {
+    "realmRequired": false,
+    "validateUpsert": true
+  },
+  "properties": {
+    "firstName": "string",
+    "familyName": "string",
+    "profilePic": "string",
+    "fbId": {
+      "type": "number",
+      "required": true
+    },
+    "location": "string",
+    "mentorProfileId": "number"
+  },
+  "scope": {
+      "include": [
+        "roles", "mentorProfile"
+      ]
+  },
+  "validations": [],
+  "relations": {
+    "roles": {
+      "type": "hasMany",
+      "model": "Role",
+      "through": "RoleMapping",
+      "keyThrough": "roleId",
+      "foreignKey": "principalId"
+    },
+    "mentorProfile": {
+      "type": "hasOne",
+      "model": "MentorProfile",
+      "foreignKey": "userId"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "ALLOW",
+      "property": "fbAuthentication"
+    }
+  ],
+  "methods": {
+    "fbAuthentication": {
+      "accepts": [
+        { "arg": "facebookToken", "type": "string", "required": true },
+        { "arg": "options", "type": "object", "http": "optionsFromRequest" }
+      ],
+      "description": "Registers or authenticates a user using their facebook token",
+      "returns": { "root": true, "type": "AccessToken" },
+      "http": { "arg": "get", "path": "/authenticate" }
+    },
+    "filterMentors": {
+      "accepts": [
+        { "arg": "filter", "type": "object", "description": "Not a normal loopback filter object" },
+        { "arg": "options", "type": "object", "http": "optionsFromRequest" }
+      ],
+      "description": "Filters mentors on a range of criteria",
+      "returns": { "root": true, "type": "MyUser" },
+      "http": { "arg": "get", "path": "/filterMentors" }
+    }
+  }
+}

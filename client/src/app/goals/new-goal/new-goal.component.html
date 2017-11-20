@@ -1,0 +1,57 @@
+<div class="wrapper">
+  <button type="button" class="close" [routerLink]="['/goals']">&times;</button>
+  <div class="content centered step-0 animated fadeIn" [hidden]="step !== 0">
+    <h1>Set up your first Goal</h1>
+    <p>Tell us what you are looking to learn with the help of a Mentor<br/>
+      then we can find someone who is right for the job.</p>
+    <button class="btn btn-light" (click)="nextStep()">Get started</button>
+  </div>
+  <div class="content centered step-1 animated fadeIn" [hidden]="step !== 1">
+    <h1 class="question">What do you want lo learn?</h1>
+    <div ngbRadioGroup name="heroCategory" [(ngModel)]="selectedHeroCategory">
+      <label ngbButtonLabel class="option radio-option" *ngFor="let category of heroCategories">
+        <input ngbButton type="radio" [value]="category">
+        <span class="icon radio-icon"></span>{{category.name}}
+      </label>
+    </div>
+    <button class="btn btn-light btn-next" (click)="nextStep()" [disabled]="!selectedHeroCategory">Next question</button>
+  </div>
+  <div class="content centered step-2 animated fadeIn" [hidden]="step !== 2">
+    <h1 class="question">What {{selectedHeroCategory?.name}} would you like to learn?</h1>
+    <div class="scroll">
+      <div name="skills" data-toggle="buttons">
+        <label ngbButtonLabel class="option radio-option" *ngFor="let skill of selectedHeroCategory?.skills">
+          <input ngbButton type="checkbox" (change)="toggleSkill(skill)" [(ngModel)]="skill.selected" [value]="skill.id">
+          <span class="icon checkbox-icon"><mat-icon svgIcon="check"></mat-icon></span>{{skill.name}}
+        </label>
+      </div>
+    </div>
+    <button class="btn btn-light btn-next" (click)="nextStep()" [disabled]="!goal.skills.length">Next question</button>
+  </div>
+  <div class="content centered step-3 animated fadeIn" [hidden]="step !== 3">
+    <div class="form-group">
+      <label for="hoursPerWeek" class="label">How many hours per week can you commit to?</label>
+      <select class="form-control" id="hoursPerWeek" name="hoursPerWeek" [(ngModel)]="goal.hoursPerWeek" placeholder="Select a range">
+        <option *ngFor="let hours of hoursPerWeek" [value]="hours.value">{{hours.label}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="weeklyBudget" class="label">Whats your weekly budget?</label>
+      <select class="form-control" id="weeklyBudget" name="weeklyBudget" [(ngModel)]="goal.weeklyBudget" placeholder="Select a limit">
+        <option *ngFor="let budget of weeklyBudgets" [value]="budget.value">{{budget.label}}</option>
+      </select>
+    </div>
+    <button class="btn btn-light btn-next" (click)="nextStep()" [disabled]="!goal.weeklyBudget || !goal.hoursPerWeek">Next question</button>
+  </div>
+  <div class="content centered step-4 animated fadeIn" [hidden]="step !== 4">
+    <div class="form-group">
+      <label for="headline" class="label">Add a quick summary...</label>
+      <input class="form-control" id="headline" name="headline" [(ngModel)]="goal.headline" placeholder="This will be the title of your goal" />
+    </div>
+    <div class="form-group">
+      <label for="description" class="label">... and explain a bit more about your studies and yourself</label>
+      <textarea class="form-control" id="description" name="description" [(ngModel)]="goal.description" placeholder="Tell us if you are following an online course or a bootcamp or any other experience you have in this field..."></textarea>
+    </div>
+    <button class="btn btn-light btn-next" (click)="create()" [disabled]="!goal.headline || !goal.description">You are set! Create your new Goal</button>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+{
+  "name": "HeroCategory",
+  "idInjection": true,
+  "mixins": {
+    "EnhancedContext": {}
+  },
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "scope": {
+    "include": "skills"
+  },
+  "validations": [],
+  "relations": {
+    "heroSkills": {
+      "type": "hasMany",
+      "model": "HeroSkill"
+    },
+    "skills": {
+      "type": "hasMany",
+      "model": "Skill",
+      "through": "HeroSkill"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

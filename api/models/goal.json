@@ -1,0 +1,85 @@
+{
+  "name": "Goal",
+  "idInjection": true,
+  "mixins": {
+    "EnhancedContext": {}
+  },
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+
+    "hoursPerWeek": {
+      "type": "number",
+      "required": true
+    },
+    "weeklyBudget": {
+      "type": "number",
+      "required": true
+    },
+    "headline": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "status": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "scope": {
+    "include": ["apprentice", "mentor", "skills"]
+  },
+  "validations": [],
+  "relations": {
+    "apprentice": {
+      "type": "belongsTo",
+      "model": "MyUser",
+      "foreignKey": "apprenticeId"
+    },
+    "mentor": {
+      "type": "belongsTo",
+      "model": "MyUser",
+      "foreignKey": "mentorId"
+    },
+    "contactRequest": {
+      "type": "hasMany",
+      "model": "ContactRequest"
+    },
+    "goalSkills": {
+      "type": "hasMany",
+      "model": "GoalSkill"
+    },
+    "skills": {
+      "type": "hasMany",
+      "model": "Skill",
+      "through": "GoalSkill"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {
+    "myGoals": {
+      "accepts": [
+        { "arg": "options", "type": "object", "http": "optionsFromRequest" }
+      ],
+      "description": "Returns only my goals",
+      "returns": { "root": true, "type": "[Goal]" },
+      "http": { "arg": "get", "path": "/myGoals" }
+    }
+  }
+}

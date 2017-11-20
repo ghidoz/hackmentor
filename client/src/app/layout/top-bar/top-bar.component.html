@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="col-auto mr-auto">
+    <a [routerLink]="['/goals']"><img src="/assets/images/logo.svg" class="logo" /></a>
+  </div>
+  <div class="col-auto" *ngIf="user">
+    <a class="profile">
+      {{user.firstName + ' ' + user.familyName}} <img [src]="user.profilePic" class="user-picture small" />
+    </a>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+{
+  "name": "hack-mentors",
+  "version": "0.0.1",
+  "description": "Hack Mentors API",
+  "license": "UNLICENSED",
+  "private": true,
+  "engines": {
+    "node": ">=8"
+  },
+  "scripts": {
+    "faker": "node faker",
+    "prestart": "sleep 10 && npm run migrate up && npm run migrate up:test && yarn sdk",
+    "start": "nodemon server.js",
+    "migrate": "db-migrate --config migrations/config.json -e development",
+    "sdk": "./node_modules/.bin/lb-sdk server /usr/client/src/app/shared/sdk -w enabled"
+  },
+  "dependencies": {
+    "compression": "~1.7",
+    "cors": "~2.8",
+    "db-migrate": "~0.10.0-beta.24",
+    "extend": "~3.0",
+    "fbgraph": "^1.4.1",
+    "helmet": "~3.8",
+    "loopback": "~3.11",
+    "loopback-boot": "~3.0",
+    "loopback-component-explorer": "~5.1",
+    "loopback-connector-mysql": "~5.1",
+    "momentjs": "^2.0.0",
+    "morgan": "^1.9.0",
+    "npm-watch": "~0.2",
+    "options": "~0.0.6",
+    "serve-favicon": "~2.4",
+    "strong-error-handler": "~2.2"
+  },
+  "devDependencies": {
+    "@mean-expert/loopback-sdk-builder": "^2.1.0-rc.12.1",
+    "codelyzer": "~3.2",
+    "db-migrate-mysql": "~1.1",
+    "domaindoc": "^2.7.4",
+    "eslint": "~4.7",
+    "eslint-config-loopback": "~8.0",
+    "faker": "^4.1.0",
+    "ncp": "~2.0",
+    "nodemon": "~1.12",
+    "nsp": "~2.8"
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  }
+}
